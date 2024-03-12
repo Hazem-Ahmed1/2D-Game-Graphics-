@@ -8,6 +8,7 @@ public class Boss_run : StateMachineBehaviour
     public float speed = 2f;
     public bool isFlipped = false;
     Rigidbody2D rb;
+    public float attackRange = 3f;
     //Boss_s boss;
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -24,12 +25,17 @@ public class Boss_run : StateMachineBehaviour
         Vector2 target = new Vector2(player.position.x,rb.position.y);
         Vector2 newpos = Vector2.MoveTowards(rb.position,target,speed *Time.fixedDeltaTime );
         rb.MovePosition(newpos);
+
+        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+		{
+			animator.SetTrigger("attack");
+		}
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       
+       animator.ResetTrigger("attack");
     }
     
 }
