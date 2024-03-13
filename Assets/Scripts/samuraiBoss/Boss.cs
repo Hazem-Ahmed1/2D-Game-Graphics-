@@ -34,6 +34,10 @@ namespace SamuraiBoss
         {
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
+            if(currentHealth <= 0)
+            {
+                GetComponent<Animator>().SetBool("death",true);
+            }
         }
 
 

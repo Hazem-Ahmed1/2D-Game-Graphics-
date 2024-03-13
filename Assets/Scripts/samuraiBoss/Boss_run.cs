@@ -6,7 +6,7 @@ namespace SamuraiBoss
 public class Boss_run : StateMachineBehaviour
 {
     Transform player;
-    public float speed = 2f;
+    public float speed = 4f;
     Rigidbody2D rb;
     public float attackRange = 5f;
     public SamuraiBoss.Boss boss;
