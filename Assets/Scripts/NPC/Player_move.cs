@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player_Move : MonoBehaviour
 {
+    private SpriteRenderer mySprite;
+    public int playerHealth = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +39,20 @@ public class Player_Move : MonoBehaviour
             //     transform.Translate(new Vector3(0,-0.07f,0));
             // } 
         // }
+    }
+
+    // take damage
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            playerHealth--;
+            Debug.Log(playerHealth);
+        }
+
+        if (playerHealth == 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 }
