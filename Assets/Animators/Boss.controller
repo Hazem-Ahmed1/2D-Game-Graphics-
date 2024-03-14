@@ -278,5 +278,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  isFlipped: 0
   attackRange: 3
+  boss: {fileID: 0}
