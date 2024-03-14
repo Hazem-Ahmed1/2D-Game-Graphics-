@@ -7,15 +7,19 @@ public class Character : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D box;
-    [SerializeField] private LayerMask groundLayer;
 
     private bool isFacingright = true;
     private bool isRunning;
     private float horizontalInput;
 
+    [Header("Ground")]
+    [SerializeField] private bool isGround;
+    [SerializeField] private LayerMask groundLayer;
+
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
+    [SerializeField] private bool canJump;
 
     [Header("WallSliding")]
     [SerializeField] private float wallSlidingSpeed;
@@ -25,6 +29,11 @@ public class Character : MonoBehaviour
     [SerializeField] private bool isTouchingWall;
     [SerializeField] private bool isWallSliding;
 
+    [Header("WallJumping")]
+    [SerializeField] private Vector2 wallJumpingAngle;
+    [SerializeField] private float wallJumpingDirection;
+    [SerializeField] private float wallJumpingForce; 
+
     // Start method is called once before the first frame update
     // Awake method executed once when the game starts even if the component wasen't called
     private void Awake()
@@ -33,6 +42,7 @@ public class Character : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
+        wallJumpingAngle.Normalize();
     }
 
     // Update is called once per frame
@@ -40,6 +50,7 @@ public class Character : MonoBehaviour
     {
         CheckInput();
         WallSlide();
+        WallJump();
         Move();
         CheckDirection();
         UpdateAnimation();
@@ -51,14 +62,23 @@ public class Character : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
-            Jump();
+            canJump = true;
+            if (!isTouchingWall) Jump();
+        }
+        if (Input.GetButtonDown("Jump") && isWallSliding)
+        {
+            // May i add max number for walljumping later
+            canJump = true;
         }
     }
     private void Move()
     {
         // Change the running speed and directions
-        if(!isWallSliding) // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
-        body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        if (!isWallSliding)
+        // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
+        {
+            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+        }
         if (body.velocity.x != 0)
         {
             isRunning = true;
@@ -82,6 +102,8 @@ public class Character : MonoBehaviour
     }
     void flip()
     {
+        // Jumping direction will be the opposite of your current movement
+        wallJumpingDirection *= -1; 
         isFacingright = !isFacingright;
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
@@ -91,7 +113,7 @@ public class Character : MonoBehaviour
     }
     private bool isGrounded()
     {
-        return Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
+        return isGround = Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
     }
     private bool isWalled()
     {
@@ -110,6 +132,14 @@ public class Character : MonoBehaviour
             isWallSliding = false;
         }
     }
+    private void WallJump()
+    {
+        if ((isWallSliding || isTouchingWall)&& canJump) 
+        {
+            body.AddForce(new Vector2(wallJumpingForce * wallJumpingDirection * wallJumpingAngle.x, wallJumpingForce * wallJumpingAngle.y), ForceMode2D.Impulse);
+            canJump = false;
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -123,3 +153,6 @@ public class Character : MonoBehaviour
         anim.SetBool("isSliding", isWallSliding);
     }
 }
+// Bugs
+// --FIXED  Jumping while touching wall is so high (isTouchingWall & isGround & canJump)
+// She can't jump while standing on a wall 
