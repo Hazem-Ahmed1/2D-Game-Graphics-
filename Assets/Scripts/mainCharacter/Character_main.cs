@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class Character : MonoBehaviour
 {
@@ -32,7 +34,15 @@ public class Character : MonoBehaviour
     [Header("WallJumping")]
     [SerializeField] private Vector2 wallJumpingAngle;
     [SerializeField] private float wallJumpingDirection;
-    [SerializeField] private float wallJumpingForce; 
+    [SerializeField] private float wallJumpingForce;
+
+    [Header("Dashing")]
+    [SerializeField] private bool canDash = true;
+    [SerializeField] private bool isDashing = false;
+    [SerializeField] private float DashingPower = 24f;
+    [SerializeField] private float DashingTime = 1f;
+    [SerializeField] private float DashingCoolDown = 1f;
+    [SerializeField] private TrailRenderer tr;
 
     // Start method is called once before the first frame update
     // Awake method executed once when the game starts even if the component wasen't called
@@ -58,23 +68,30 @@ public class Character : MonoBehaviour
 
     private void CheckInput()
     {
+        if (isDashing)
+        {
+            return;
+        }
         // Access the horizontal component from the input manager
         horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             canJump = true;
-            if (!isTouchingWall) Jump();
+            Jump();
         }
-        if (Input.GetButtonDown("Jump") && isWallSliding)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
-            // May i add max number for walljumping later
-            canJump = true;
+            StartCoroutine(Dash());
         }
     }
     private void Move()
     {
+        if (isDashing)
+        {
+            return;
+        }
         // Change the running speed and directions
-        if (!isWallSliding)
+        if (!isWallSliding && !isTouchingWall)
         // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
         {
             body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
@@ -90,6 +107,10 @@ public class Character : MonoBehaviour
     }
     private void CheckDirection()
     {
+        if (isDashing)
+        {
+            return;
+        }
         // Check the case of moving right without actually facing right and vice versa
         if (horizontalInput > 0 && !isFacingright)
         {
@@ -110,6 +131,7 @@ public class Character : MonoBehaviour
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpForce);
+        Debug.Log("normal jump");
     }
     private bool isGrounded()
     {
@@ -134,10 +156,11 @@ public class Character : MonoBehaviour
     }
     private void WallJump()
     {
-        if ((isWallSliding || isTouchingWall)&& canJump) 
+        if ((isWallSliding && isTouchingWall)&& Input.GetButtonDown("Jump")) 
         {
             body.AddForce(new Vector2(wallJumpingForce * wallJumpingDirection * wallJumpingAngle.x, wallJumpingForce * wallJumpingAngle.y), ForceMode2D.Impulse);
-            canJump = false;
+            //canJump = false;
+            Debug.Log("walljump");
         }
     }
     private void OnDrawGizmos()
@@ -145,14 +168,34 @@ public class Character : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawCube(wallCheck.position, wallCheckSize);
     }
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+        float originalGravity = body.gravityScale;
+        body.gravityScale = 0f;
+        body.velocity = new Vector2((isFacingright ? 1 : -1) * DashingPower, 0f);
+        tr.emitting = true;
+        tr.startColor = Color.clear;
+        tr.endColor = Color.clear;
+        yield return new WaitForSeconds(DashingCoolDown);
+        tr.emitting = false;
+        body.gravityScale = originalGravity;
+        isDashing = false;
+        canDash = true;
+    }
     private void UpdateAnimation()
     {
-        anim.SetBool("isRunning",isRunning);
+        anim.SetBool("isDashing", isDashing);
+        anim.SetBool("isRunning", isRunning);
         anim.SetBool("isGrounded", isGrounded());
         anim.SetFloat("yVelocity", body.velocity.y);
         anim.SetBool("isSliding", isWallSliding);
     }
+
 }
 // Bugs
 // --FIXED  Jumping while touching wall is so high (isTouchingWall & isGround & canJump)
 // She can't jump while standing on a wall 
+// --FIXED When it's (isTouchingWall & !isGround & !isWallSliding) it jumps 
+// Dashing animation while flying dosen't work
