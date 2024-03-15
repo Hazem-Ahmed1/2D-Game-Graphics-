@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pip
   - Enemy
+  - oneWayPlatform
   layers:
   - Default
   - TransparentFX
