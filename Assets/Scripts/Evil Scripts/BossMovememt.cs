@@ -4,42 +4,63 @@ using UnityEngine;
 
 public class BossMovememt : MonoBehaviour
 {
-
+    private enum MovementState { Idle, Move, Attack }
+    private SpriteRenderer SR;
     Animator boss_animator;
+    public float lineOfSite = 5;
+    public float attackRange = 3;
     public float speed = 5.0f;
     public float jumpForce = 10.0f;
+    public Transform Player;
     // Start is called before the first frame update
     void Start()
     {
         boss_animator = GetComponent<Animator>();
+        SR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float direction = Input.GetAxisRaw("Horizontal");
-        if (direction != 0)
+
+
+        float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
+        if (distanceFromPlayer < lineOfSite && distanceFromPlayer > attackRange - 1)
         {
-            boss_animator.SetBool("Move", true);
-        }else {
-            boss_animator.SetBool("Move", false);
+            transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed * Time.deltaTime);
         }
+        UpdateAnimationState(distanceFromPlayer);
+    }
 
-        if (direction < 0)
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(this.transform.position, lineOfSite);
+        Gizmos.DrawWireSphere(this.transform.position, attackRange);
+    }
+
+    private void UpdateAnimationState(float Distance)
+    {
+        MovementState state;
+        if (Distance < lineOfSite && Distance > attackRange && Player.position.x > this.transform.position.x)
         {
-          transform.rotation = new Quaternion(0, 180, 0, 0);
-
-        }else if(direction > 0)
-        {
-            transform.rotation = new Quaternion(0, 0, 0, 0);
-
+            state = MovementState.Move;
+            SR.flipX = false;
         }
-        transform.position += new Vector3(direction * Time.deltaTime * speed, 0, 0);
-
-        if (Input.GetKeyDown("space") && Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y) < 0.01f)
+        else if (Distance < lineOfSite && Distance > attackRange && Player.position.x < this.transform.position.x)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector3(0, jumpForce, 0);
+            state = MovementState.Move;
+            SR.flipX = true;
         }
+        else if (Distance <= attackRange)
+        {
+            state = MovementState.Attack;
+        }
+        else
+        {
+            state = MovementState.Idle;
+        }
+        boss_animator.SetInteger("State", (int)state);
 
     }
 }
