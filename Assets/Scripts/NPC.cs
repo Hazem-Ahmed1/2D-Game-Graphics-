@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class NPC : MonoBehaviour
 {
     private Transform _player;
     private bool _isFlipped = false;
