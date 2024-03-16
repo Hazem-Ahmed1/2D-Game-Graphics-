@@ -196,6 +196,8 @@ public class Character : MonoBehaviour
 }
 // Bugs
 // --FIXED  Jumping while touching wall is so high (isTouchingWall & isGround & canJump)
-// She can't jump while standing on a wall 
+// He can't jump while standing on a wall 
 // --FIXED When it's (isTouchingWall & !isGround & !isWallSliding) it jumps 
 // --FIXED Dashing animation while flying dosen't work
+// Only the first frame of dashing appears
+// --FIXED Error in the blind tree animations 
