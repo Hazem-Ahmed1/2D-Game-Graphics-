@@ -7,6 +7,7 @@ TagManager:
   - pip
   - Enemy
   - oneWayPlatform
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: clouds
     uniqueID: 1684548105
+    locked: 0
+  - name: decorations
+    uniqueID: 2442268441
     locked: 0
   - name: platformer
     uniqueID: 3600227451
