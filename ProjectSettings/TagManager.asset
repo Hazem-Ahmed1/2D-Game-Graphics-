@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pip
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

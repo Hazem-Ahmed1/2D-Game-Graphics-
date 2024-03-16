@@ -42,17 +42,11 @@ public class Player_Move : MonoBehaviour
     }
 
     // take damage
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            playerHealth--;
-            Debug.Log(playerHealth);
-        }
-
-        if (playerHealth == 0)
-        {
-            Debug.Log("Game Over");
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.TryGetComponent<Enemy>(out)) 
+    //     {
+            
+    //     }
+    // }
 }
