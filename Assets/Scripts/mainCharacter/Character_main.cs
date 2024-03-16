@@ -198,4 +198,4 @@ public class Character : MonoBehaviour
 // --FIXED  Jumping while touching wall is so high (isTouchingWall & isGround & canJump)
 // She can't jump while standing on a wall 
 // --FIXED When it's (isTouchingWall & !isGround & !isWallSliding) it jumps 
-// Dashing animation while flying dosen't work
+// --FIXED Dashing animation while flying dosen't work
