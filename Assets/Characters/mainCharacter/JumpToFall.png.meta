@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce6e73a3e5b1f6a44ab5dc482677b9ac
+guid: 2ff76fb9e4c6f834b999c40627abd704
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,33 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: JumpToFall_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 48
         y: 0
-        width: 25
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f53467de142f824db41940783820275
-      internalID: 2138855504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_1
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 0
-        width: 26
+        width: 43
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -171,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234512e4282cf9b4c9af00e71ac669da
-      internalID: -887114811
+      spriteID: a8644ed16e16f1b47b46defc42e0693e
+      internalID: 1995491939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: JumpToFall_1
       rect:
         serializedVersion: 2
-        x: 107
+        x: 117
         y: 0
-        width: 25
-        height: 64
+        width: 43
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af779117c22ccac4d9751eea15dd7fe8
-      internalID: 1139598094
+      spriteID: 62956f720a37475459d2a760d1a0d4cf
+      internalID: 475608218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: JumpToFall_2
       rect:
         serializedVersion: 2
-        x: 155
+        x: 188
         y: 0
-        width: 27
-        height: 64
+        width: 42
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72627a383d0841e4d9e351db1b0ccb59
-      internalID: 669653024
+      spriteID: 93f7d34251caae24682d09bddc4e8e2d
+      internalID: -1941659277
       vertices: []
       indices: 
       edges: []
@@ -230,10 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: 2138855504
-      idle_1: -887114811
-      idle_2: 1139598094
-      idle_3: 669653024
+      JumpToFall_0: 1995491939
+      JumpToFall_1: 475608218
+      JumpToFall_2: -1941659277
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
