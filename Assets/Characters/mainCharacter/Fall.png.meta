@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ce6e73a3e5b1f6a44ab5dc482677b9ac
+guid: 7c2c912e7a3a33541bb7a76c87404cd6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,33 +136,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: Fall_0
       rect:
         serializedVersion: 2
-        x: 16
+        x: 15
         y: 0
-        width: 25
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f53467de142f824db41940783820275
-      internalID: 2138855504
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_1
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 0
-        width: 26
+        width: 39
         height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -171,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 234512e4282cf9b4c9af00e71ac669da
-      internalID: -887114811
+      spriteID: 26f56b8cfa3beda409c80ab8529183af
+      internalID: -147357208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: Fall_1
       rect:
         serializedVersion: 2
-        x: 107
+        x: 82
         y: 0
-        width: 25
-        height: 64
+        width: 39
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af779117c22ccac4d9751eea15dd7fe8
-      internalID: 1139598094
+      spriteID: 34a1166b5e3de2b489ce8150bd6a8b6b
+      internalID: -1536387007
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: Fall_2
       rect:
         serializedVersion: 2
-        x: 155
+        x: 153
         y: 0
-        width: 27
-        height: 64
+        width: 39
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +192,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72627a383d0841e4d9e351db1b0ccb59
-      internalID: 669653024
+      spriteID: b7f8e05bf576de84ebabee42851c915a
+      internalID: 489565726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fall_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 40
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6ed0b941037fd43abe0d5c733710e3
+      internalID: -1091030040
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      idle_0: 2138855504
-      idle_1: -887114811
-      idle_2: 1139598094
-      idle_3: 669653024
+      Fall_0: -147357208
+      Fall_1: -1536387007
+      Fall_2: 489565726
+      Fall_3: -1091030040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
