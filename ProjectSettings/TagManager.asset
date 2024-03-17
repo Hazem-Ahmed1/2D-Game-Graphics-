@@ -10,6 +10,7 @@ TagManager:
   - bulletparent
   - bullet
   - Bullet
+  - Spikes
   layers:
   - Default
   - TransparentFX
