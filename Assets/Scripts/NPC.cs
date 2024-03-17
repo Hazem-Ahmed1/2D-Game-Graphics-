@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    private Transform _player;
-    private bool _isFlipped = false;
+    private Transform player;
+    private bool isFlipped = false;
     public NPCAttributes attributes;
-    public int _currHealth;
+    public int currHealth;
 
     void Awake()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
@@ -19,17 +19,17 @@ public class NPC : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        _currHealth -= damage;
+        currHealth -= damage;
     }
 
 
     public void LookAtPlayer()
     {
-        if ((transform.position.x > _player.position.x && _isFlipped) || 
-            (transform.position.x < _player.position.x && !_isFlipped))
+        if ((transform.position.x > player.position.x && isFlipped) || 
+            (transform.position.x < player.position.x && !isFlipped))
         {
             transform.Rotate(0f, 180f, 0f);
-            _isFlipped = !_isFlipped;
+            isFlipped = !isFlipped;
         }
     }
 }

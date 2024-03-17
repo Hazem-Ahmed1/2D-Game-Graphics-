@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public GameObject _player;
-    public float _offset = 6f;
-    public float _offsetSmoothing = 10f;
-    private Vector3 _playerPosition;
+    public GameObject player;
+    public float offset;
+    public float offsetSmoothing;
+    private Vector3 playerPosition;
  
     // Start is called before the first frame update
     void Start()
     {
-
+        offset = 6f;
+        offsetSmoothing = 10f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        _playerPosition = new Vector3(_player.transform.position.x + _offset, transform.position.y, transform.position.z);
+        playerPosition = new Vector3(player.transform.position.x + offset, transform.position.y, transform.position.z);
 
-        transform.position = Vector3.Lerp(transform.position, _playerPosition, _offsetSmoothing * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
     }
 }
