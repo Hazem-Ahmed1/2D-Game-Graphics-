@@ -6,8 +6,7 @@ public class NPC : MonoBehaviour
     private bool isFlipped = false;
     public NPCAttributes attributes;
     public int currHealth;
-    public Transform firePoint;
-    public GameObject stonePrefap;
+
 
 
     void Awake()
@@ -41,10 +40,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public void shoot()
-    {
-        Instantiate(stonePrefap,firePoint.position,firePoint.rotation);
-    }
+
 
 
 
