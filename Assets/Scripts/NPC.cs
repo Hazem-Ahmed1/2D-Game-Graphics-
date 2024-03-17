@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
     public NPCAttributes attributes;
     public int _currHealth;
 
-    void Start()
+    void Awake()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
