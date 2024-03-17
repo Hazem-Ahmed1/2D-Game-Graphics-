@@ -72,16 +72,17 @@ public class Enemies : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") && EnemyHealth > 0)
+        if (collision.gameObject.name.Equals("Bullet") && EnemyHealth >= 0)
         {
             EnemyHealth--;
             anim.SetTrigger("hurt");
             Debug.Log(EnemyHealth);
             StartCoroutine("Hurt");
-        }
-        else if(collision.gameObject.name.Equals("Bullet") && EnemyHealth <= 0)
-        {
-            Die();
+            if (EnemyHealth == 0)
+            {
+                anim.ResetTrigger("hurt");
+                Die();
+            }
         }
     }
 
