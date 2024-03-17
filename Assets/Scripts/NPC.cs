@@ -4,16 +4,12 @@ public class NPC : MonoBehaviour
 {
     private Transform _player;
     private bool _isFlipped = false;
-    private readonly int maxHealth = 100;
+    public NPCAttributes attributes;
     public int _currHealth;
-    public float _speed = 2f;
-    public float _lookRange = 10f;
-    public float _atkRange = 1.5f;
 
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player").transform;
-        _currHealth = maxHealth;
     }
 
     void Update()

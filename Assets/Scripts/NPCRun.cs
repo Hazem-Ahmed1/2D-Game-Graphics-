@@ -15,16 +15,17 @@ public class NPCRun : StateMachineBehaviour
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {   
-        if (Vector2.Distance(player.position, _rb.position) <= _npc._atkRange)
+        Debug.Log(_npc.attributes);
+        if (Vector2.Distance(player.position, _rb.position) <= _npc.attributes._atkRange)
         {
             animator.Play("attack");
         }
-        else if (Vector2.Distance(player.position, _rb.position) <= _npc._lookRange)
+        else if (Vector2.Distance(player.position, _rb.position) <= _npc.attributes._lookRange)
 		{
 			animator.Play("walk");
             _npc.LookAtPlayer();
             Vector2 target = new(player.position.x,_rb.position.y);
-            Vector2 newpos = Vector2.MoveTowards(_rb.position, target, _npc._speed * Time.fixedDeltaTime);
+            Vector2 newpos = Vector2.MoveTowards(_rb.position, target, _npc.attributes._speed * Time.fixedDeltaTime);
             _rb.MovePosition(newpos);  
 		}
         else animator.Play("idle");   
