@@ -7,11 +7,9 @@ TagManager:
   - pip
   - Enemy
   - oneWayPlatform
- خرا_الطين
   - bulletparent
   - bullet
   - Bullet
- main
   layers:
   - Default
   - TransparentFX
