@@ -6,10 +6,14 @@ public class NPC : MonoBehaviour
     private bool isFlipped = false;
     public NPCAttributes attributes;
     public int currHealth;
+    public Transform firePoint;
+    public GameObject stonePrefap;
+
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        currHealth = attributes.healthPoints;
     }
 
     void Update()
@@ -20,6 +24,10 @@ public class NPC : MonoBehaviour
     void TakeDamage(int damage)
     {
         currHealth -= damage;
+        if(currHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -32,4 +40,13 @@ public class NPC : MonoBehaviour
             isFlipped = !isFlipped;
         }
     }
+
+    public void shoot()
+    {
+        Instantiate(stonePrefap,firePoint.position,firePoint.rotation);
+    }
+
+
+
+
 }

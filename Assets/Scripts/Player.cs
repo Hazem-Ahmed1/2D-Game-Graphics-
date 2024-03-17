@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private bool grounded;
     [SerializeField] float speed = 5f;
     [SerializeField] float jump = 3f;
+    public int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -74,4 +75,14 @@ public class Player : MonoBehaviour
             grounded = false;
         }
     }
+
+    public void TakeDamage (int damage)
+	{
+		health -= damage;
+
+		if (health <= 0)
+		{
+			Destroy(gameObject);
+		}
+	}
 }

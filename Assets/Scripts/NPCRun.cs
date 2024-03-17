@@ -14,8 +14,9 @@ public class NPCRun : StateMachineBehaviour
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {   
-        Debug.Log(npc.attributes);
+    {      
+        
+        //Debug.Log(npc.attributes);
         if (Vector2.Distance(player.position, rb.position) <= npc.attributes.atkRange)
         {
             animator.Play("attack");

@@ -7,5 +7,5 @@ public class NPCAttributes : ScriptableObject
     public float lookRange;
     public float atkRange;
     public float speed;
-    public float damage;
+    public int damage;
 }
