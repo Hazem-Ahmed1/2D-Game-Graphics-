@@ -6,9 +6,6 @@ public class NPC : MonoBehaviour
     private bool isFlipped = false;
     public NPCAttributes attributes;
     public int currHealth;
-
-
-
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -39,10 +36,4 @@ public class NPC : MonoBehaviour
             isFlipped = !isFlipped;
         }
     }
-
-
-
-
-
-
 }
