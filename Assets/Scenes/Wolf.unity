@@ -539,6 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jump: 3
+  health: 100
 --- !u!95 &1085331108
 Animator:
   serializedVersion: 5
@@ -678,9 +679,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1804272971}
   - component: {fileID: 1804272970}
-  - component: {fileID: 1804272969}
   - component: {fileID: 1804272973}
   - component: {fileID: 1804272972}
+  - component: {fileID: 1804272975}
+  - component: {fileID: 1804272974}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -688,20 +690,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1804272969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804272968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03aadef6ffa6b4043b665c9869f744cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 384ada7cec41aeb43861893e17c1fdbb, type: 2}
-  currHealth: 100
 --- !u!212 &1804272970
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -745,7 +733,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -882526752, guid: e8397b9e613bb56419a8aa6013a29313, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -840,7 +828,42 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!95 &1804272974
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804272968}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 411887dd2b261944faa121d9204d3e91, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1804272975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804272968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03aadef6ffa6b4043b665c9869f744cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes: {fileID: 11400000, guid: 384ada7cec41aeb43861893e17c1fdbb, type: 2}
+  currHealth: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

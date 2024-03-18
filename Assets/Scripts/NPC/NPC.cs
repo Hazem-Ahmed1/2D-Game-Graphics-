@@ -28,6 +28,10 @@ using UnityEngine;
 
         void FixedUpdate()
         {
+            rb = GetComponent<Rigidbody2D>();
+            animator = GetComponent<Animator>();
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            
             BasicMovement();
         }
 
