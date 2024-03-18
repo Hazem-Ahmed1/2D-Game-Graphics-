@@ -7,6 +7,8 @@ TagManager:
   - pip
   - Enemy
   - oneWayPlatform
+  - ground
+  - player
   - bulletparent
   - bullet
   - Bullet
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
+  - Ground
   - 
   - 
   - 
