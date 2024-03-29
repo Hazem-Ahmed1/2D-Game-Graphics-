@@ -14,15 +14,12 @@ public class stone : MonoBehaviour
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        // Check player's position relative to the stone's position
         if (player.position.x > transform.position.x)
         {
-            // If player is on the right side, move stone to the right
             rb.velocity = Vector2.right * speed;
         }
         else
         {
-            // If player is on the left side, move stone to the left
             rb.velocity = Vector2.left * speed;
         }
 	}

@@ -19,6 +19,7 @@ using UnityEngine;
             rb = GetComponent<Rigidbody2D>();
             animator = GetComponent<Animator>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            currHealth = attributes.healthPoints;
         }
 
         void Update()
