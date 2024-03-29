@@ -681,8 +681,8 @@ GameObject:
   - component: {fileID: 1804272970}
   - component: {fileID: 1804272973}
   - component: {fileID: 1804272972}
-  - component: {fileID: 1804272975}
   - component: {fileID: 1804272974}
+  - component: {fileID: 1804272976}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Untagged
@@ -850,7 +850,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1804272975
+--- !u!114 &1804272976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -862,8 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03aadef6ffa6b4043b665c9869f744cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 384ada7cec41aeb43861893e17c1fdbb, type: 2}
-  currHealth: 100
+  attributes: {fileID: 11400000, guid: cd8354b1cf97b3e4ebb4bbd47f9136cc, type: 2}
+  currHealth: 110
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
