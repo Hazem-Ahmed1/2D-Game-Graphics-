@@ -17,7 +17,7 @@ public class BossController : MonoBehaviour
     void Start()
     {
         boss_animator = GetComponent<Animator>();
-        SR = GetComponent <SpriteRenderer>();
+        SR = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
 
@@ -63,20 +63,23 @@ public class BossController : MonoBehaviour
             StartCoroutine("Hurt");
             if (HealthBarBoss.Health <= 0)
 
-        if (collision.gameObject.CompareTag("bullet") && BossHealth >= 0)
-        {
-            BossHealth--;
-            boss_animator.SetTrigger("Take Hit");
-            Debug.Log(BossHealth);
-            StartCoroutine("Hurt");
-            if (BossHealth == 0)
-            {
-                boss_animator.ResetTrigger("Take Hit");
-                Die();
-            }
+                if (collision.gameObject.CompareTag("bullet") && BossHealth >= 0)
+                {
+                    BossHealth--;
+                    boss_animator.SetTrigger("Take Hit");
+                    Debug.Log(BossHealth);
+                    StartCoroutine("Hurt");
+                    if (BossHealth == 0)
+                    {
+                        boss_animator.ResetTrigger("Take Hit");
+                        Die();
+                    }
+                }
+
         }
-        
+
     }
+
 
     IEnumerator Hurt()
     {
