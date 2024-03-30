@@ -6,6 +6,7 @@ public class Player_Move : MonoBehaviour
 {
     private SpriteRenderer mySprite;
     public int playerHealth = 3;
+    public float speed = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,12 @@ public class Player_Move : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 // transform.position =new Vector3(transform.position.x + 2 , transform.position.y, transform.position.z);
-                transform.Translate(new Vector3(-0.07f,0,0));
+                transform.Translate(new Vector3(-speed, 0,0));
             }
             else if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 // mySprite.flipX = false;
-                transform.Translate(new Vector3(0.07f,0,0));
+                transform.Translate(new Vector3(speed,0,0));
             } 
             // if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             // {
