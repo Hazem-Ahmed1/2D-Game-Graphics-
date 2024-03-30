@@ -7,7 +7,12 @@ TagManager:
   - pip
   - Enemy
   - oneWayPlatform
+  - ground
+  - player
+  - bulletparent
+  - bullet
   - Bullet
+  - Spikes
   layers:
   - Default
   - TransparentFX
@@ -16,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
+  - Ground
   - 
   - 
   - 

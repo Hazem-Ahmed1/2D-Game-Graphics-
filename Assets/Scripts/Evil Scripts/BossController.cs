@@ -12,6 +12,7 @@ public class BossController : MonoBehaviour
     public bool isFlipped = false;
     public int Damage = 10;
     private bool heal = true;
+    public int BossHealth = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,6 @@ public class BossController : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
 
     }
-
     private void FixedUpdate()
     {
         if (heal && HealthBarBoss.Health <= 35)
@@ -62,6 +62,14 @@ public class BossController : MonoBehaviour
             Debug.Log(HealthBarBoss.Health);
             StartCoroutine("Hurt");
             if (HealthBarBoss.Health <= 0)
+
+        if (collision.gameObject.CompareTag("bullet") && BossHealth >= 0)
+        {
+            BossHealth--;
+            boss_animator.SetTrigger("Take Hit");
+            Debug.Log(BossHealth);
+            StartCoroutine("Hurt");
+            if (BossHealth == 0)
             {
                 boss_animator.ResetTrigger("Take Hit");
                 Die();
