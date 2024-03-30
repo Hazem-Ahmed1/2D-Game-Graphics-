@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  isFlipped: 0
 --- !u!58 &5788754446525124585
 CircleCollider2D:
   m_ObjectHideFlags: 0
