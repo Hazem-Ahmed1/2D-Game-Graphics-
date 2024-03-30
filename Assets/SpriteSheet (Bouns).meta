@@ -1,5 +1,8 @@
 fileFormatVersion: 2
+New-NPC
 guid: cc7db8d6bed8c644ab80d6212bb9f667
+guid: 753e28f6ba4ee2640b34e2b61e219220
+main
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
