@@ -333,7 +333,10 @@ SpriteRenderer:
   m_Size: {x: 0.15, y: 0.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+Updated upstream
   m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
+Stashed changes
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1384710587
@@ -411,9 +414,18 @@ MonoBehaviour:
   moveSpeed: 5
   groundRange: 8
   groundLayer:
+Updated upstream
     serializedVersion: 2
     m_Bits: 128
   anim: {fileID: 1384710584}
+    m_Bits: 128
+  body: {fileID: 0}
+  anim: {fileID: 1384710584}
+  boxCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  horizontalInput: 0
+  isFacingRight: 1
+Stashed changes
 --- !u!1 &1689925615
 GameObject:
   m_ObjectHideFlags: 0
