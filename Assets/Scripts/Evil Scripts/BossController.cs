@@ -10,6 +10,8 @@ public class BossController : MonoBehaviour
     Animator boss_animator;
     public Transform player;
     public bool isFlipped = false;
+    public int Damage = 10;
+    private bool heal = true;
     public int BossHealth = 5;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,18 @@ public class BossController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
 
+    }
+    private void FixedUpdate()
+    {
+        if (heal && HealthBarBoss.Health <= 35)
+        {
+            boss_animator.SetTrigger("Heal");
+            HealthBarBoss.Healing(25);
+            Debug.Log("Before");
+            heal = false;
+            Debug.Log("After");
+
+        }
     }
     public void LookAtPlayer()
     {
@@ -41,6 +55,14 @@ public class BossController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("bullet") && HealthBarBoss.Health >= 0)
+        {
+            HealthBarBoss.TakeDamage(Damage);
+            boss_animator.SetTrigger("Take Hit");
+            Debug.Log(HealthBarBoss.Health);
+            StartCoroutine("Hurt");
+            if (HealthBarBoss.Health <= 0)
+
         if (collision.gameObject.CompareTag("bullet") && BossHealth >= 0)
         {
             BossHealth--;
