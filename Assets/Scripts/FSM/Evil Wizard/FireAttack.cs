@@ -27,6 +27,7 @@ public class FireAttack : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+
         if (nextFireTime < Time.time)
         {
             Instantiate(bullet, BulletParent.transform.position, Quaternion.identity);
