@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8331768978675238476}
   - component: {fileID: 3589610917045101456}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.45, y: 0}
@@ -81,9 +81,9 @@ GameObject:
   - component: {fileID: 453329813098997724}
   - component: {fileID: 6822854492766372588}
   - component: {fileID: 5293047331197588148}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
