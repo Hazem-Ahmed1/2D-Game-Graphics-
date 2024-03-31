@@ -39,33 +39,45 @@ public class NPC : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (alive && !boss)
+        if (!boss)
         {
             BasicMovement();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TakeDamage(15);
         }
         
     }
 
     protected void BasicMovement()
     {
+        LookAtPlayer();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        Player p = player.GetComponent<Player>();
         float distanceToPlayer = Vector2.Distance(player.position, rb.position);
 
         if (distanceToPlayer < attributes.atkRange && !isAttacking)
         {
+            ChangeAnimationState(NPC_ATTACK_1);
             isAttacking = true;
-            animator.SetBool("isAttacking", true);
             Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
+            if(distanceToPlayer <= attributes.atkRange)
+            {
+                p.TakeDamage(10);
+            }
         }
         else if (distanceToPlayer < attributes.lookRange && !isAttacking)
         {
-            animator.SetBool("isRunning", true);
+            ChangeAnimationState(NPC_RUN);
             Vector2 target = new(player.position.x, rb.position.y);
             Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
             rb.MovePosition(newpos);
         }
-        else
+        else if (!isAttacking)
         {
-            animator.SetBool("isRunning", false);
+            ChangeAnimationState(NPC_IDLE);
         }
     }
 
@@ -90,18 +102,26 @@ public class NPC : MonoBehaviour
         }
     }
 
+    void ChangeAnimationState(string newAnimation)
+    {
+        if (currentAnimaton == newAnimation) return;
+
+        animator.Play(newAnimation);
+        //Debug.Log(newAnimation+" is being played");
+        currentAnimaton = newAnimation;
+    }
+
     void AttackDone()
     {
         isAttacking = false;
-        animator.SetBool("isAttacking", false);
     }
     
-    void Die()
+    void Die ()
     {   
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
-        //Destroy(gameObject);
+        Destroy(gameObject,animator.GetCurrentAnimatorStateInfo(0).length);
     }
 }
