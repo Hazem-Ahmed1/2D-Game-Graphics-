@@ -5,6 +5,7 @@
         "**/.vs": true,
         "**/.gitmodules": true,
         "**/.vsconfig": true,
+        "**/.gitmodules": true,
         "**/*.booproj": true,
         "**/*.pidb": true,
         "**/*.suo": true,
@@ -56,5 +57,10 @@
         "temp/": true,
         "Temp/": true
     },
+        "ProjectSettings/": true,
+        "temp/": true,
+        "Temp/": true
+    },
+    "dotnet.preferCSharpExtension": true,
     "dotnet.defaultSolution": "2D-Game-Graphics-.sln"
 }

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8ff2ddecba2a0414db37cd3cabdebe57
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - NPCS1: {fileID: 2458027122986779998, guid: ff0a5abdab2480c4e92e71861c2e91cb, type: 3}
+  - NPCS2: {fileID: 2458027122986779998, guid: ff0a5abdab2480c4e92e71861c2e91cb, type: 3}
+  - NPCS3: {fileID: 2718546607996248414, guid: 55cb0ec26a107bb428ed1fb0a4c98a42, type: 3}
+  - NPCS4: {instanceID: 0}
+  - Better_Call_NPC: {instanceID: 0}
+  - player: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
