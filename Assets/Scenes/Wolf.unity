@@ -751,7 +751,7 @@ Transform:
   m_GameObject: {fileID: 1804272968}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.42, y: -3.33, z: 0}
+  m_LocalPosition: {x: 4.54, y: -3.34, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -864,6 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: cd8354b1cf97b3e4ebb4bbd47f9136cc, type: 2}
   currHealth: 110
+  boss: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

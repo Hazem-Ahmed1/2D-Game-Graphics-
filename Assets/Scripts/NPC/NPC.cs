@@ -11,7 +11,6 @@ public class NPC : MonoBehaviour
     private bool isFlipped = false;
     private bool isAttacking = false;
     public int currHealth;
-    private bool alive = true;
     public bool boss = false;
     const string NPC_IDLE = "idle";
     const string NPC_RUN = "run";
@@ -27,11 +26,6 @@ public class NPC : MonoBehaviour
     void Update()
     {   
         LookAtPlayer();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(15);
-        }
-        
     }
 
     void FixedUpdate()
@@ -54,19 +48,18 @@ public class NPC : MonoBehaviour
     protected void BasicMovement()
     {
         LookAtPlayer();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         Player p = player.GetComponent<Player>();
-        float distanceToPlayer = Vector2.Distance(player.position, rb.position);
+        float distanceToPlayer = Vector2.Distance(player.transform.position, rb.position);
 
         if (distanceToPlayer < attributes.atkRange && !isAttacking)
         {
             ChangeAnimationState(NPC_ATTACK_1);
             isAttacking = true;
-            Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
             if(distanceToPlayer <= attributes.atkRange)
             {
-                p.TakeDamage(10);
+                p.TakeDamage(attributes.damage);
             }
+            Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
         }
         else if (distanceToPlayer < attributes.lookRange && !isAttacking)
         {
@@ -74,6 +67,7 @@ public class NPC : MonoBehaviour
             Vector2 target = new(player.position.x, rb.position.y);
             Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
             rb.MovePosition(newpos);
+            Debug.Log("run");
         }
         else if (!isAttacking)
         {
@@ -86,7 +80,6 @@ public class NPC : MonoBehaviour
         currHealth -= damage;
         if(currHealth <= 0)
         {
-            alive = false;
             Die();
         }
     }

@@ -3,7 +3,6 @@
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.vs": true,
-        "**/.gitmodules": true,
         "**/.vsconfig": true,
         "**/.gitmodules": true,
         "**/*.booproj": true,
@@ -55,12 +54,8 @@
         "ProjectSettings/": true,
         "UserSettings/": true,
         "temp/": true,
-        "Temp/": true
+        "Temp/": true,
+        "dotnet.preferCSharpExtension": true
     },
-        "ProjectSettings/": true,
-        "temp/": true,
-        "Temp/": true
-    },
-    "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "2D-Game-Graphics-.sln"
+    "dotnet.defaultSolution": "gfx-2D-Game.sln"
 }

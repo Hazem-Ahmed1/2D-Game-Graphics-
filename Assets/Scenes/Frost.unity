@@ -754,8 +754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6cbe817dd4b2dd409146fa9d5f4bb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributes: {fileID: 11400000, guid: 95fc08b9dde907544acb609c64d0fc19, type: 2}
+  attributes: {fileID: 11400000, guid: 4ec01d10e4cd1c542b87e3c6a8e87246, type: 2}
   currHealth: 100
+  boss: 0
 --- !u!1 &1367346521
 GameObject:
   m_ObjectHideFlags: 0

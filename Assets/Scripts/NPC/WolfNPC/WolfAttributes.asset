@@ -15,5 +15,5 @@ MonoBehaviour:
   healthPoints: 100
   lookRange: 10
   atkRange: 2
-  speed: 3
+  speed: 5
   damage: 20
