@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6037904705054350597}
   - component: {fileID: 4212783940847884983}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 6077768521817075395}
   - component: {fileID: 6418794688132101118}
   - component: {fileID: 2926596491828985062}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
