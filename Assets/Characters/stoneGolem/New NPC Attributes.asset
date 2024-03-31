@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefde4b864a403e4d803a85dcd770835, type: 3}
   m_Name: New NPC Attributes
   m_EditorClassIdentifier: 
-  healthPoints: 100
+  healthPoints: 500
   lookRange: 12
   atkRange: 0
   speed: 1

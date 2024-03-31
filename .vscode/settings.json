@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "gfx-2D-Game.sln"
+    "dotnet.defaultSolution": "2D-Game-Graphics-.sln"
 }
