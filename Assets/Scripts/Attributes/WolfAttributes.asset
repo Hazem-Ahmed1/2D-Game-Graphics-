@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: WerewolfNPC
+  m_Name: WolfAttributes
   m_EditorClassIdentifier: Assembly-CSharp::NPCAttributes
-  healthPoints: 120
+  healthPoints: 100
   lookRange: 10
   atkRange: 2
   speed: 3
-  damage: 30
+  damage: 20
