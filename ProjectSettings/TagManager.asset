@@ -15,7 +15,7 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
-  - NPC
+  - NPC_EvilBoss
   layers:
   - Default
   - TransparentFX
