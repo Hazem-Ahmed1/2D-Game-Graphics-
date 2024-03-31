@@ -13,6 +13,7 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
+  - NPC
   layers:
   - Default
   - TransparentFX

@@ -203,8 +203,8 @@ Transform:
   m_GameObject: {fileID: 492928511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.92, y: 1.14, z: 0}
-  m_LocalScale: {x: 0.9585, y: 1, z: 1}
+  m_LocalPosition: {x: -6.8, y: -0.33, z: 0}
+  m_LocalScale: {x: 0.9653054, y: 1.0071, z: 1.0071}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492928511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfe6dd2358602f84f9c057b9367f9cc6, type: 3}
   m_Name: 
@@ -377,6 +377,7 @@ Transform:
   m_Children:
   - {fileID: 1302884141}
   - {fileID: 1518178786}
+  - {fileID: 1568178252}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &542021780
@@ -463,6 +464,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff2ddecba2a0414db37cd3cabdebe57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCS1: {fileID: 2458027122986779998, guid: ff0a5abdab2480c4e92e71861c2e91cb, type: 3}
+  NPCS2: {fileID: 2458027122986779998, guid: ff0a5abdab2480c4e92e71861c2e91cb, type: 3}
+  NPCS3: {fileID: 2718546607996248414, guid: 55cb0ec26a107bb428ed1fb0a4c98a42, type: 3}
+  NPCS4: {fileID: 2718546607996248414, guid: 55cb0ec26a107bb428ed1fb0a4c98a42, type: 3}
+  Clone: 1
+  fireRate: 1
+  Better_Call_NPC: {fileID: 0}
   player: {fileID: 787995911}
   isFlipped: 0
   Damage: 10
@@ -919,7 +927,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787995908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfe6dd2358602f84f9c057b9367f9cc6, type: 3}
   m_Name: 
@@ -1226,6 +1234,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!1 &1568178251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1568178252}
+  m_Layer: 0
+  m_Name: Better Call NPC
+  m_TagString: NPC
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1568178252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568178251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.46, y: 2.88, z: -0.016785948}
+  m_LocalScale: {x: 1.0669883, y: 1.0669883, z: 1.0669883}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 542021779}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952956113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1380,6 @@ GameObject:
   - component: {fileID: 2041648410}
   - component: {fileID: 2041648409}
   - component: {fileID: 2041648411}
-  - component: {fileID: 2041648412}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -1461,33 +1499,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &2041648412
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2041648408}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

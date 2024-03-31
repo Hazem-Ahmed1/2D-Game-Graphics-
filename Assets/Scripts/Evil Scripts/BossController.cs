@@ -7,6 +7,14 @@ public class BossController : MonoBehaviour
     private enum MovementState { Idle, Move, Attack }
     private Rigidbody2D rb;
     private BoxCollider2D BOX;
+    public GameObject NPCS1;
+    public GameObject NPCS2;
+    public GameObject NPCS3;
+    public GameObject NPCS4;
+    public bool Clone = true;
+    private float nextFireTime;
+    public float fireRate = 1;
+    public GameObject Better_Call_NPC;
     GameObject ChooseColider;
     Animator boss_animator;
     public Transform player;
@@ -16,6 +24,7 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Better_Call_NPC = GameObject.FindWithTag("NPC").gameObject;
         ChooseColider = GetComponent<GameObject>();
         boss_animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -41,6 +50,17 @@ public class BossController : MonoBehaviour
             heal = false;
 
         }
+
+        if (nextFireTime < Time.time && HealthBarBoss.Health <= 50 && Clone)
+        {
+            Instantiate(NPCS1, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS2, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS3, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS4, Better_Call_NPC.transform.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+            Clone = false;
+        }
+        
     }
     public void LookAtPlayer()
     {
