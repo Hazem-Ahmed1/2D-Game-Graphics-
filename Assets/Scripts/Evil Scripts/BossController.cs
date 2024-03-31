@@ -24,7 +24,7 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Better_Call_NPC = GameObject.FindWithTag("NPC").gameObject;
+        Better_Call_NPC = GameObject.FindWithTag("NPC_EvilBoss").gameObject;
         ChooseColider = GetComponent<GameObject>();
         boss_animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
