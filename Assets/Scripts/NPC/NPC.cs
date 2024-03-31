@@ -48,31 +48,24 @@ public class NPC : MonoBehaviour
 
     protected void BasicMovement()
     {
-        LookAtPlayer();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        Player p = player.GetComponent<Player>();
         float distanceToPlayer = Vector2.Distance(player.position, rb.position);
 
         if (distanceToPlayer < attributes.atkRange && !isAttacking)
         {
-            ChangeAnimationState(NPC_ATTACK_1);
             isAttacking = true;
+            animator.SetBool("isAttacking", true);
             Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
-            if(distanceToPlayer <= attributes.atkRange)
-            {
-                p.TakeDamage(10);
-            }
         }
         else if (distanceToPlayer < attributes.lookRange && !isAttacking)
         {
-            ChangeAnimationState(NPC_RUN);
+            animator.SetBool("isRunning", true);
             Vector2 target = new(player.position.x, rb.position.y);
             Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
             rb.MovePosition(newpos);
         }
-        else if (!isAttacking)
+        else
         {
-            ChangeAnimationState(NPC_IDLE);
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -97,21 +90,13 @@ public class NPC : MonoBehaviour
         }
     }
 
-    void ChangeAnimationState(string newAnimation)
-    {
-        if (currentAnimaton == newAnimation) return;
-
-        animator.Play(newAnimation);
-        //Debug.Log(newAnimation+" is being played");
-        currentAnimaton = newAnimation;
-    }
-
     void AttackDone()
     {
         isAttacking = false;
+        animator.SetBool("isAttacking", false);
     }
     
-    void Die ()
+    void Die()
     {   
         Collider2D collider = GetComponent<Collider2D>();
         collider.enabled = false;
