@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - NPC
+  - StoneGolem
   - pip
   - Enemy
   - oneWayPlatform
@@ -18,7 +21,6 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ground
   - Water
   - UI
   - Wall
