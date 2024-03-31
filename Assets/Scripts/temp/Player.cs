@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private bool grounded;
     [SerializeField] float speed = 5f;
     [SerializeField] float jump = 3f;
+    //public GameObject deathEffect;
     public int health = 100;
 
     // Start is called before the first frame update
@@ -82,7 +83,14 @@ public class Player : MonoBehaviour
 
 		if (health <= 0)
 		{
-			Destroy(gameObject);
+            Destroy(gameObject);
+            //Die();
 		}
 	}
+    //TODO
+    // void Die ()
+    // {
+    //     Instantiate(deathEffect, transform.position, Quaternion.identity);
+    //     Destroy(gameObject);
+    // }
 }

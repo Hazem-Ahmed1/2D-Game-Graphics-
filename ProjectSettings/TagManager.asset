@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - NPC
+  - StoneGolem
   layers:
   - Default
   - TransparentFX

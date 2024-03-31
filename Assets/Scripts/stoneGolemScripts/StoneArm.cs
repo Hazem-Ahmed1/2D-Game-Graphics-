@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class stone : MonoBehaviour
+public class StoneArm : MonoBehaviour
 {   
     public float speed = 5f;
     public Rigidbody2D rb;

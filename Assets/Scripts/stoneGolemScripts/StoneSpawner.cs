@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoneSpawner : NPC
+public class StoneSpawner : MonoBehaviour
 {
     public GameObject stones;
     public int numberOfStonesToSpawn = 7;
@@ -29,7 +29,7 @@ public class StoneSpawner : NPC
 
     void SpawnStone()
     {
-        float lowestPoint = transform.position.y - widthOffset;
+        //float lowestPoint = transform.position.y - widthOffset;
         float highestPoint = transform.position.y + widthOffset;
         float randomX = Random.Range(transform.position.x - widthOffset, transform.position.x + widthOffset);
 
@@ -38,5 +38,11 @@ public class StoneSpawner : NPC
 
         Vector3 spawnPosition = new Vector3(randomX, yPos, 0);
         Instantiate(stones, spawnPosition, Quaternion.identity);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        // Output the name of the object the stone has hit
+        Destroy(gameObject);
     }
 }
