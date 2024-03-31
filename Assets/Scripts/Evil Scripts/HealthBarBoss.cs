@@ -26,11 +26,8 @@ public class HealthBarBoss : MonoBehaviour
     }
     public static void TakeDamage(float damage)
     {
-        Debug.Log(Health);
         Health -= damage;
-        Debug.Log(Health);
         healthBar.fillAmount = Health / max_Health;
-        Debug.Log(Health);
     }
     public static void Healing(float healingAmount)
     {

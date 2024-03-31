@@ -17,6 +17,7 @@ public class BulletShot : MonoBehaviour
         bulletRB = GetComponent<Rigidbody2D>();
         bossmove = GetComponent<BossController>();
         target = GameObject.FindGameObjectWithTag("Player");
+        LookAtPlayer();
         Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
 
@@ -51,7 +52,6 @@ public class BulletShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookAtPlayer();
 
     }
 }
