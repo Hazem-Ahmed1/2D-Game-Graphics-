@@ -60,7 +60,8 @@ public class BossController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
             Clone = false;
         }
-        
+        Physics2D.IgnoreLayerCollision(8, 7);
+
     }
     public void LookAtPlayer()
     {
