@@ -15,6 +15,8 @@ public class AdvancedEnemy : MonoBehaviour
     private int EnemyHealth = 10;
     [SerializeField]
     private Transform Player;
+    [SerializeField]
+    private GameObject Blood;
     private Animator anim;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -28,6 +30,7 @@ public class AdvancedEnemy : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        // Blood = GameObject.FindGameObjectWithTag("BloodNPC");
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -82,6 +85,7 @@ public class AdvancedEnemy : MonoBehaviour
     }
     private void TakeDamage(int damage)
     {
+        Instantiate(Blood, this.transform.position,Quaternion.identity);
         EnemyHealth = EnemyHealth - damage;
         anim.SetTrigger("hurt");
         Debug.Log(EnemyHealth);

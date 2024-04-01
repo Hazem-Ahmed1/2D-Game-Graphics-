@@ -199,6 +199,7 @@ MonoBehaviour:
   attackRange: 2.46
   EnemyHealth: 10
   Player: {fileID: 0}
+  Blood: {fileID: 4113469608473167751, guid: d4f4e0c7075dcf94b8d1b309002f6211, type: 3}
   isFlipped: 0
 --- !u!1 &6345912168577481496
 GameObject:
