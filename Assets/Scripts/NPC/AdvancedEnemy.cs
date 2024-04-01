@@ -54,14 +54,17 @@ public class AdvancedEnemy : MonoBehaviour
         {
             LookAtPlayer();
             state = MovementState.running;
+            Circle.enabled = false;
         }
         else if(distanceFromPlayer <= attackRange && EnemyHealth > 0)
         {
             state = MovementState.attack;
+            Circle.enabled = true;
         }
         else
         {
             state = MovementState.idle;
+            Circle.enabled = false;
         }
         anim.SetInteger("state", (int)state);
     }
@@ -114,7 +117,6 @@ public class AdvancedEnemy : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
-            Circle.enabled = true;
         }
         else if (transform.position.x < Player.position.x && isFlipped)
         {
