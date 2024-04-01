@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!213 &21300000
+Sprite:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bringer-of-Death-SpritSheet_13
+  m_Rect:
+    serializedVersion: 2
+    x: 700
+    y: 558
+    width: 140
+    height: 93
+  m_Offset: {x: 0, y: 0}
+  m_Border: {x: 0, y: 0, z: 0, w: 0}
+  m_PixelsToUnits: 32
+  m_Pivot: {x: 0.5, y: 0.5}
+  m_Extrude: 1
+  m_IsPolygon: 0
+  m_AtlasName: 
+  m_PackingTag: 
+  m_RenderDataKey:
+    1914d95466e3d4341a618c35a56d5f82: 973881123878733542
+  m_AtlasTags: []
+  m_SpriteAtlas: {fileID: 0}
+  m_RD:
+    serializedVersion: 3
+    texture: {fileID: 2800000, guid: 1914d95466e3d4341a618c35a56d5f82, type: 3}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 18
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 8
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 070006000500040005000600010005000400030001000400000001000300020001000000
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 8
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 160
+      _typelessdata: 0000a03f0000883e000000000000e03f0000babf000000000000e03f000050be000000000000843f0000883e000000000000683f0000703e000000000000203f0000babf000000000000403e0000b8be000000000000403e00005cbf000000009224393fbbec523fcdcc3c3f0000403fcdcc3c3f71c34d3ff98a373fbbec523feaa0363fa594523f4992343f0000403f165f313f030b4c3f165f313fa289463f
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 776.05133
+      y: 558
+      width: 49.9124
+      height: 54.923878
+    textureRectOffset: {x: 76.05133, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 32, y: 770, z: 32, w: 604.5}
+    downscaleMultiplier: 1
+  m_AtlasRD:
+    serializedVersion: 3
+    texture: {fileID: 2800000, guid: 1914d95466e3d4341a618c35a56d5f82, type: 3}
+    alphaTexture: {fileID: 0}
+    secondaryTextures: []
+    m_SubMeshes:
+    - serializedVersion: 2
+      firstByte: 0
+      indexCount: 18
+      topology: 0
+      baseVertex: 0
+      firstVertex: 0
+      vertexCount: 8
+      localAABB:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+    m_IndexBuffer: 070006000500040005000600010005000400030001000400000001000300020001000000
+    m_VertexData:
+      serializedVersion: 3
+      m_VertexCount: 8
+      m_Channels:
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 1
+        offset: 0
+        format: 0
+        dimension: 2
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      m_DataSize: 160
+      _typelessdata: 0000a03f0000883e000000000000e03f0000babf000000000000e03f000050be000000000000843f0000883e000000000000683f0000703e000000000000203f0000babf000000000000403e0000b8be000000000000403e00005cbf000000009224393fbbec523fcdcc3c3f0000403fcdcc3c3f71c34d3ff98a373fbbec523feaa0363fa594523f4992343f0000403f165f313f030b4c3f165f313fa289463f
+    m_Bindpose: []
+    textureRect:
+      serializedVersion: 2
+      x: 776.05133
+      y: 558
+      width: 49.9124
+      height: 54.923878
+    textureRectOffset: {x: 76.05133, y: 0}
+    atlasRectOffset: {x: -1, y: -1}
+    settingsRaw: 64
+    uvTransform: {x: 32, y: 770, z: 32, w: 604.5}
+    downscaleMultiplier: 1
+  m_PhysicsShape:
+  - - {x: 1.5, y: -0.890625}
+    - {x: 1.75, y: -0.609375}
+    - {x: 1.75, y: -0.265625}
+    - {x: 1.25, y: 0.265625}
+    - {x: 1.03125, y: 0.265625}
+    - {x: 0.90625, y: 0.234375}
+    - {x: 0.75, y: -0.078125}
+    - {x: 0.75, y: -0.265625}
+    - {x: 0.3125, y: -0.296875}
+    - {x: 0.1875, y: -0.453125}
+    - {x: 0.1875, y: -0.734375}
+    - {x: 0.25, y: -0.828125}
+    - {x: 0.59375, y: -0.984375}
+    - {x: 0.71875, y: -1.265625}
+    - {x: 0.71875, y: -1.453125}
+    - {x: 1.5625, y: -1.453125}
+    - {x: 1.625, y: -1.359375}
+    - {x: 1.625, y: -1.140625}
+  m_Bones: []
+  m_SpriteID: 6e6004ae8bbe38d00800000000000000
