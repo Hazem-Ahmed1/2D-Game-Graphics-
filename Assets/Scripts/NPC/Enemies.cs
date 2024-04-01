@@ -69,7 +69,7 @@ public class Enemies : MonoBehaviour
         if (collision.gameObject.name.Equals("Bullet") && EnemyHealth >= 0)
         {
             TakeDamage(1);
-            if (EnemyHealth == 0)
+            if (EnemyHealth <= 0)
             {
                 anim.ResetTrigger("hurt");
                 Die();
