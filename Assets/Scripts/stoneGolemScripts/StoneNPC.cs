@@ -20,7 +20,7 @@ public class StoneNPC : NPC
         boss = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         LookAtPlayer();
         currentState = animator.GetCurrentAnimatorStateInfo(0); // Update currentState here

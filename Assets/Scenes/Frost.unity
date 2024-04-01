@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 1230123024}
   - component: {fileID: 1230123029}
   m_Layer: 0
-  m_Name: NPC
+  m_Name: Frost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

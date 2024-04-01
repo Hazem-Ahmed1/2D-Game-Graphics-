@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -10,11 +11,18 @@ public class NPC : MonoBehaviour
     public NPCAttributes attributes;
     private bool isFlipped = false;
     private bool isAttacking = false;
+    private bool isHurt = false;
+    private bool isDead = false;
     public int currHealth;
     public bool boss = false;
     const string NPC_IDLE = "idle";
     const string NPC_RUN = "run";
     const string NPC_ATTACK_1 = "atk_1";
+    const string NPC_ATTACK_2 = "atk_2";
+    const string NPC_ATTACK_3 = "atk_3";
+    const string NPC_RUN_ATTACK = "run_atk";
+    const string NPC_HURT = "hurt";
+    const string NPC_DEATH = "death";
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +33,7 @@ public class NPC : MonoBehaviour
 
     void Update()
     {   
-        LookAtPlayer();
+
     }
 
     void FixedUpdate()
@@ -33,20 +41,14 @@ public class NPC : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (!boss)
-        {
-            BasicMovement();
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(15);
-        }
-        
+        BasicMovement();
     }
 
     protected void BasicMovement()
     {
+        if(isDead || isHurt) return;
+
         LookAtPlayer();
         Player p = player.GetComponent<Player>();
         float distanceToPlayer = Vector2.Distance(player.transform.position, rb.position);
@@ -67,17 +69,26 @@ public class NPC : MonoBehaviour
             Vector2 target = new(player.position.x, rb.position.y);
             Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
             rb.MovePosition(newpos);
-            Debug.Log("run");
         }
         else if (!isAttacking)
         {
             ChangeAnimationState(NPC_IDLE);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isHurt = true;
+            TakeDamage(30);
+        }
     }
 
     public void TakeDamage(int damage)
     {
+        ChangeAnimationState(NPC_HURT);
         currHealth -= damage;
+        Debug.Log("hurt: "+currHealth);
+        Invoke("DamageDone", animator.GetCurrentAnimatorStateInfo(0).length);
+
         if(currHealth <= 0)
         {
             Die();
@@ -108,13 +119,16 @@ public class NPC : MonoBehaviour
     {
         isAttacking = false;
     }
+    void DamageDone()
+    {
+        isHurt = false;
+    }
     
-    void Die ()
+    void Die()
     {   
-        Collider2D collider = GetComponent<Collider2D>();
-        collider.enabled = false;
-        rb.bodyType = RigidbodyType2D.Static;
-        animator.SetTrigger("death");
-        Destroy(gameObject,animator.GetCurrentAnimatorStateInfo(0).length);
+        ChangeAnimationState(NPC_DEATH);
+        isDead = true;
+        Debug.Log("dead");
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
     }
 }
