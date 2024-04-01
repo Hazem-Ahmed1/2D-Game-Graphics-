@@ -6,7 +6,6 @@ public class BossController : MonoBehaviour
 {
     private enum MovementState { Idle, Move, Attack }
     private Rigidbody2D rb;
-    private BoxCollider2D BOX;
     public GameObject NPCS1;
     public GameObject NPCS2;
     public GameObject NPCS3;
@@ -14,8 +13,7 @@ public class BossController : MonoBehaviour
     public bool Clone = true;
     private float nextFireTime;
     public float fireRate = 1;
-    public GameObject Better_Call_NPC;
-    GameObject ChooseColider;
+     GameObject Better_Call_NPC;
     Animator boss_animator;
     public Transform player;
     public bool isFlipped = false;
@@ -25,20 +23,9 @@ public class BossController : MonoBehaviour
     void Start()
     {
         Better_Call_NPC = GameObject.FindWithTag("NPC_EvilBoss").gameObject;
-        ChooseColider = GetComponent<GameObject>();
         boss_animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
-
-
-        // Get the reference to the child object
-         ChooseColider = this.transform.Find("AttackDamage").gameObject;
-
-        // Get the component you want to disable on the child object
-         BOX = ChooseColider.GetComponent<BoxCollider2D>();
-
-        // Disable the component
-         BOX.enabled = false;
     }
 
     private void FixedUpdate()
@@ -73,7 +60,6 @@ public class BossController : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
-            BOX.enabled = true;
         }
         else if (transform.position.x < player.position.x && isFlipped)
         {
