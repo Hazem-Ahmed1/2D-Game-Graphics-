@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: WolfAttributes
+  m_Name: RedWolfAttributes
   m_EditorClassIdentifier: Assembly-CSharp::NPCAttributes
   healthPoints: 100
   lookRange: 10

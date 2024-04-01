@@ -50,7 +50,6 @@ public class NPC : MonoBehaviour
         if(isDead || isHurt) return;
 
         LookAtPlayer();
-        Player p = player.GetComponent<Player>();
         float distanceToPlayer = Vector2.Distance(player.transform.position, rb.position);
 
         if (distanceToPlayer < attributes.atkRange && !isAttacking)
@@ -59,7 +58,7 @@ public class NPC : MonoBehaviour
             isAttacking = true;
             if(distanceToPlayer <= attributes.atkRange)
             {
-                p.TakeDamage(attributes.damage);
+                player.GetComponent<Player>().TakeDamage(attributes.damage);
             }
             Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
         }
