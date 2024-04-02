@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,7 +134,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Run+Attack_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 93
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f24f52fc43384d4bab347b3549e6b64
+      internalID: 1145378485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_1
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 0
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b93418d6d55e224ead400cefbfd4642
+      internalID: 790158638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_2
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 106
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad840d2b5d956c840a2fab8dff7ef3d8
+      internalID: 1454684032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_3
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1
+        width: 114
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d843d9967c49d4a883e2e05d858e08
+      internalID: 1542436550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1
+        width: 122
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25e21b23f3a02694f9125922f13f472f
+      internalID: 1327189161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_5
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 2
+        width: 109
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 204597004c8fa8d45b4754c94504c2f1
+      internalID: -1409569917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run+Attack_8
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 0
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2359df248043fc941984f33df935c874
+      internalID: 2030619536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -145,7 +292,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Run+Attack_0: 1145378485
+      Run+Attack_1: 790158638
+      Run+Attack_2: 1454684032
+      Run+Attack_3: 1542436550
+      Run+Attack_4: 1327189161
+      Run+Attack_5: -1409569917
+      Run+Attack_6: -636193584
+      Run+Attack_7: 719418406
+      Run+Attack_8: 2030619536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

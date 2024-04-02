@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -9,20 +7,20 @@ public class NPC : MonoBehaviour
     protected Animator animator;
     private string currentAnimaton;
     public NPCAttributes attributes;
-    private bool isFlipped = false;
-    private bool isAttacking = false;
-    private bool isHurt = false;
-    private bool isDead = false;
+    protected bool isFlipped = false;
+    protected bool isAttacking = false;
+    protected bool isHurt = false;
+    protected bool isDead = false;
     public int currHealth;
     public bool boss = false;
-    const string NPC_IDLE = "idle";
-    const string NPC_RUN = "run";
-    const string NPC_ATTACK_1 = "atk_1";
-    const string NPC_ATTACK_2 = "atk_2";
-    const string NPC_ATTACK_3 = "atk_3";
-    const string NPC_RUN_ATTACK = "run_atk";
-    const string NPC_HURT = "hurt";
-    const string NPC_DEATH = "death";
+    protected const string NPC_IDLE = "idle";
+    protected const string NPC_RUN = "run";
+    protected const string NPC_ATTACK_1 = "atk_1";
+    protected const string NPC_ATTACK_2 = "atk_2";
+    protected const string NPC_ATTACK_3 = "atk_3";
+    protected const string NPC_RUN_ATTACK = "run_atk";
+    protected const string NPC_HURT = "hurt";
+    protected const string NPC_DEATH = "death";
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,18 +54,14 @@ public class NPC : MonoBehaviour
         {
             ChangeAnimationState(NPC_ATTACK_1);
             isAttacking = true;
-            if(distanceToPlayer <= attributes.atkRange)
-            {
-                player.GetComponent<Player>().TakeDamage(attributes.damage);
-            }
+            player.GetComponent<Player>().TakeDamage(attributes.damage);
+
             Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
         }
         else if (distanceToPlayer < attributes.lookRange && !isAttacking)
         {
             ChangeAnimationState(NPC_RUN);
-            Vector2 target = new(player.position.x, rb.position.y);
-            Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
-            rb.MovePosition(newpos);
+            MoveToPlayer();
         }
         else if (!isAttacking)
         {
@@ -79,6 +73,20 @@ public class NPC : MonoBehaviour
             isHurt = true;
             TakeDamage(30);
         }
+    }
+
+    protected void MoveToPlayer()
+    {
+        Vector2 target = new(player.position.x, rb.position.y);
+        Vector2 newpos = Vector2.MoveTowards(rb.position, target, attributes.speed * Time.fixedDeltaTime);
+        rb.MovePosition(newpos);
+    }
+
+    protected void MoveToPlayer(float speed)
+    {
+        Vector2 target = new(player.position.x, rb.position.y);
+        Vector2 newpos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        rb.MovePosition(newpos);
     }
 
     public void TakeDamage(int damage)
@@ -105,7 +113,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    void ChangeAnimationState(string newAnimation)
+    protected void ChangeAnimationState(string newAnimation)
     {
         if (currentAnimaton == newAnimation) return;
 
