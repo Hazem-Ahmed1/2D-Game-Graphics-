@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D box;
+    public Animator animator;
 
     private bool isFacingright = true;
     private bool isRunning;
