@@ -33,6 +33,6 @@ public class stoneCollision : MonoBehaviour
 
     private void effect()
     {
-        Destroy(Instantiate(impact,transform.position,transform.rotation),0.7f);
+        Destroy(Instantiate(impact,transform.position,transform.rotation),0.5f);
     }
 }

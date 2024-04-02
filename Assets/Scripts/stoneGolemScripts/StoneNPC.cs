@@ -18,9 +18,10 @@ public class StoneNPC : NPC
         healthBar.SetMaxHealth(currHealth);
         rb = GetComponent<Rigidbody2D>();
         boss = true;
+        currentState = animator.GetCurrentAnimatorStateInfo(0);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         LookAtPlayer();
         currentState = animator.GetCurrentAnimatorStateInfo(0); // Update currentState here

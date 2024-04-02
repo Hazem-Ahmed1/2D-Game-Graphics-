@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
 
     void Update()
     {   
-
+        LookAtPlayer();
     }
 
     void FixedUpdate()
@@ -39,8 +39,9 @@ public class NPC : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        BasicMovement();
+        if(!boss) 
+            BasicMovement();
+        
     }
 
     protected void BasicMovement()
@@ -104,14 +105,14 @@ public class NPC : MonoBehaviour
 
 
     public void LookAtPlayer()
+{
+    if ((transform.position.x > player.position.x && isFlipped) ||
+        (transform.position.x < player.position.x && !isFlipped))
     {
-        if ((transform.position.x > player.position.x && isFlipped) || 
-            (transform.position.x < player.position.x && !isFlipped))
-        {
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = !isFlipped;
-        }
+        transform.Rotate(0f, 180f, 0f);
+        isFlipped = !isFlipped;
     }
+}
 
     protected void ChangeAnimationState(string newAnimation)
     {
