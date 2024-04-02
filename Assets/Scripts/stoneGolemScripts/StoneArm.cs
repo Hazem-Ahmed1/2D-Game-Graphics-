@@ -6,42 +6,55 @@ public class StoneArm : MonoBehaviour
     private float timer = 0;
     public float speed = 0.5f;
     public Rigidbody2D rb;
-    
-    public NPCAttributes attributes;
     private Transform player;
-    public int damage = 20 ;
+    public int damage = 20;
 
 	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        keepTracking();
+        KeepTracking();
 	}
 
     void Update(){
-    if (timer < track)
+        if (timer < track)
         {
             timer += Time.deltaTime;
         }
         else
         {
-                keepTracking();
+            KeepTracking();
             timer = 0;
         }
-
     }
-    void keepTracking(){
+
+    void KeepTracking(){
         Vector3 direction = (player.position - transform.position).normalized;
         rb.velocity = direction * speed;
     }
+
+    // void OnCollisionEnter2D(Collision2D collision)
+	// {   
+    //     if (collision.gameObject.CompareTag("Player"))
+	// 	{
+    //         Player p = player.GetComponent<Player>();
+	// 		p.TakeDamage(damage);
+    //         Debug.Log("HIT SHOOT");
+	// 	}
+	// 	Destroy(gameObject);
+	// }
+
     void OnTriggerEnter2D(Collider2D hitInfo)
 	{   
         Player p = hitInfo.GetComponent<Player>();
         if (p != null)
 		{
 			p.TakeDamage(damage);
+            Debug.Log("HIT SHOOT");
 		}
-		Destroy(gameObject);
+        Debug.Log(hitInfo.name);
+        if(hitInfo.name != "arm_projectile(Clone)")
+		    Destroy(gameObject);
 	}
 
     // private void OnBecameInvisible()

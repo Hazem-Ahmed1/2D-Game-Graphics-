@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoneNPC : NPC
@@ -8,26 +6,60 @@ public class StoneNPC : NPC
     public Transform firePoint2;
     public GameObject stonePrefap;
     public LineRenderer lineRenderer;
-    public healthBar healthBar;
-    AnimatorStateInfo currentState;
+    public HealthBar healthBar;
+    protected const string BOSS_SHOOT = "shoot";
+    protected const string BOSS_WALK = "walk";
+    protected const string BOSS_IMMUNE = "immune";
+    protected const string BOSS_LAZER = "lazer";
+
     //private Rigidbody2D rb;
 
     void Start()
     {
-        currHealth = attributes.healthPoints;
-        healthBar.SetMaxHealth(currHealth);
         rb = GetComponent<Rigidbody2D>();
-        boss = true;
-        currentState = animator.GetCurrentAnimatorStateInfo(0);
+        animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        currHealth = attributes.healthPoints;
+        // healthBar.SetMaxHealth(currHealth);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        LookAtPlayer();
-        currentState = animator.GetCurrentAnimatorStateInfo(0); // Update currentState here
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        BossMove();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             BossTakeDamage(15);
+        }
+    }
+
+    private void BossMove()
+    {
+        if(isDead || isHurt) return;
+
+        LookAtPlayer();
+        float distanceToPlayer = Vector2.Distance(player.transform.position, rb.position);
+
+        if (distanceToPlayer < attributes.atkRange && !isAttacking)
+        {
+            ChangeAnimationState(BOSS_SHOOT);
+            isAttacking = true;
+            // player.GetComponent<Player>().TakeDamage(attributes.damage);
+
+            Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
+        }
+        else if (distanceToPlayer < attributes.lookRange && !isAttacking)
+        {
+            ChangeAnimationState(BOSS_WALK);
+            MoveToPlayer();
+        }
+        else if (!isAttacking)
+        {
+            ChangeAnimationState(NPC_IDLE);
         }
     }
 
@@ -57,10 +89,10 @@ public class StoneNPC : NPC
 
     public void BossTakeDamage(int damage)
     {
-        if (!currentState.IsName("immune"))
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("immune"))
         {
             currHealth -= damage;
-            healthBar.SetHealth(currHealth);
+            // healthBar.SetHealth(currHealth);
             if (currHealth <= 0)
             {
                 Die();
@@ -68,11 +100,4 @@ public class StoneNPC : NPC
         }
     }
 
-    void Die ()
-    {
-        Collider2D collider = GetComponent<Collider2D>();
-        collider.enabled = false;
-        rb.bodyType = RigidbodyType2D.Static;
-        animator.SetTrigger("death");
-    }
 }

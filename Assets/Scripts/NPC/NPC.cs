@@ -12,7 +12,6 @@ public class NPC : MonoBehaviour
     protected bool isHurt = false;
     protected bool isDead = false;
     public int currHealth;
-    public bool boss = false;
     protected const string NPC_IDLE = "idle";
     protected const string NPC_RUN = "run";
     protected const string NPC_ATTACK_1 = "atk_1";
@@ -29,19 +28,12 @@ public class NPC : MonoBehaviour
         currHealth = attributes.healthPoints;
     }
 
-    void Update()
-    {   
-        LookAtPlayer();
-    }
-
     void FixedUpdate()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if(!boss) 
-            BasicMovement();
-        
+        BasicMovement();
     }
 
     protected void BasicMovement()
@@ -132,7 +124,7 @@ public class NPC : MonoBehaviour
         isHurt = false;
     }
     
-    void Die()
+    protected void Die()
     {   
         ChangeAnimationState(NPC_DEATH);
         isDead = true;
