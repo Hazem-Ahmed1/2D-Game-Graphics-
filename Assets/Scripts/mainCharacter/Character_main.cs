@@ -74,7 +74,7 @@ public class Character : MonoBehaviour
             return;
         }
         // Access the horizontal component from the input manager
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             canJump = true;

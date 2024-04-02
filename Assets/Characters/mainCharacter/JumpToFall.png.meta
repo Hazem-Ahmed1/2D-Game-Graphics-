@@ -139,10 +139,10 @@ TextureImporter:
       name: JumpToFall_0
       rect:
         serializedVersion: 2
-        x: 48
+        x: 26
         y: 0
-        width: 43
-        height: 62
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: JumpToFall_1
       rect:
         serializedVersion: 2
-        x: 117
+        x: 267
         y: 0
-        width: 43
-        height: 62
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: JumpToFall_2
       rect:
         serializedVersion: 2
-        x: 188
+        x: 532
         y: 0
-        width: 42
-        height: 62
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
