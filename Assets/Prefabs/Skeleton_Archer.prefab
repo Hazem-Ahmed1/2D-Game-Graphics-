@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 862574229061226364}
   - component: {fileID: 5871541210014926135}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7815259176404693608}
   - component: {fileID: 5949774351112924693}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArrowPoint
   m_TagString: bulletparent
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 3246923885832266720}
   - component: {fileID: 1603738318013575132}
   - component: {fileID: 223049703961710950}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Skeleton_Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2425204093766239476}
   - component: {fileID: 153022017214248347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
