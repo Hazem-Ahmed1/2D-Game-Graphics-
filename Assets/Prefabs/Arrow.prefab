@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0020999908, y: -0.00909999, z: 0}
-    m_Extent: {x: 1.039, y: 0.58640003, z: 0}
+    m_Center: {x: 0.0070500374, y: 0.006399989, z: 0}
+    m_Extent: {x: 1.04355, y: 0.5862, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -8394494106047588171}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3589610917045101456}
   m_Layer: 8
   m_Name: AttackPoint
-  m_TagString: Untagged
+  m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
