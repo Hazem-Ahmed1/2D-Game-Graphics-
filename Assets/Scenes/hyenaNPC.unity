@@ -136,8 +136,6 @@ GameObject:
   - component: {fileID: 463737055}
   - component: {fileID: 463737054}
   - component: {fileID: 463737053}
-  - component: {fileID: 463737058}
-  - component: {fileID: 463737059}
   - component: {fileID: 463737060}
   m_Layer: 7
   m_Name: hyena
@@ -306,42 +304,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &463737058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463737052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88c733eccefdec240baae1cb3cc50b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  groundRange: 8
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  anim: {fileID: 463737053}
---- !u!114 &463737059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 463737052}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49a77a7c264a8d642afe60ec54f17493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  groundRange: 8
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  anim: {fileID: 463737053}
 --- !u!114 &463737060
 MonoBehaviour:
   m_ObjectHideFlags: 0
