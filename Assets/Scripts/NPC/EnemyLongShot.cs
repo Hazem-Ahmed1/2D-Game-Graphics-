@@ -55,6 +55,12 @@ public class EnemyLongShot : MonoBehaviour
             transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed* Time.deltaTime);
         }
         UpdateAnimationState(distanceFromPlayer , EnemyHealth);
+
+    }
+
+    private void Update()
+    {
+        LookAtPlayer();
     }
     private void UpdateAnimationState(float distanceFromPlayer, int EnemyHealth)
     {
@@ -65,7 +71,7 @@ public class EnemyLongShot : MonoBehaviour
         }
         else if(distanceFromPlayer <= RunRange && distanceFromPlayer > attackRange && EnemyHealth > 0)// && Player.position.x > this.transform.position.x
         {
-            LookAtPlayer();
+            // LookAtPlayer();
             state = MovementState.running;
             Circle.enabled = false;
         }

@@ -37,7 +37,6 @@ public class AdvancedEnemy : MonoBehaviour
         ChooseColider = this.transform.Find("AttackPoint").gameObject;
         Circle = ChooseColider.GetComponent<CircleCollider2D>();
         Physics2D.IgnoreLayerCollision(7,7);
-        speed = 1;
         Circle.enabled = false;
     }
 

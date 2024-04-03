@@ -752,7 +752,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1562434033}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -1111,7 +1111,6 @@ GameObject:
   - component: {fileID: 406985051}
   - component: {fileID: 406985050}
   - component: {fileID: 406985049}
-  - component: {fileID: 406985048}
   m_Layer: 5
   m_Name: Canvas(Victory)
   m_TagString: Untagged
@@ -1119,18 +1118,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &406985048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 406985047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b01dfef1f7c48046b85d61bea769c40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &406985049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2360,7 +2347,6 @@ GameObject:
   - component: {fileID: 1529871549}
   - component: {fileID: 1529871548}
   - component: {fileID: 1529871547}
-  - component: {fileID: 1529871546}
   m_Layer: 5
   m_Name: Canvas(GameOver)
   m_TagString: Untagged
@@ -2368,18 +2354,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1529871546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529871545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b01dfef1f7c48046b85d61bea769c40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1529871547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2479,7 +2453,6 @@ GameObject:
   - component: {fileID: 1562434036}
   - component: {fileID: 1562434035}
   - component: {fileID: 1562434034}
-  - component: {fileID: 1562434033}
   m_Layer: 5
   m_Name: Canvas(StartGame)
   m_TagString: Untagged
@@ -2487,18 +2460,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1562434033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562434032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b01dfef1f7c48046b85d61bea769c40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1562434034
 MonoBehaviour:
   m_ObjectHideFlags: 0
