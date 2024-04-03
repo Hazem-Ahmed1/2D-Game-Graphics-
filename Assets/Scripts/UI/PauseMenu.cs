@@ -60,6 +60,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void QuitLevel()
     {
+        Debug.Log("Game Over");
         Application.Quit();
     }
 }
