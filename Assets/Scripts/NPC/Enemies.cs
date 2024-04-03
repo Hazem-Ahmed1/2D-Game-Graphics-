@@ -15,6 +15,7 @@ public class Enemies : MonoBehaviour
     private int EnemyHealth = 10;
     [SerializeField]
     private Transform Player;
+    public GameObject item;
     private Animator anim;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -25,6 +26,7 @@ public class Enemies : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        RandoItem();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -88,6 +90,7 @@ public class Enemies : MonoBehaviour
     }
     private void Die()
     {
+        Instantiate(item, this.transform.position,Quaternion.identity);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
@@ -100,5 +103,16 @@ public class Enemies : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(this.transform.position, lineOfSite);
         Gizmos.DrawWireSphere(this.transform.position, attackRange);
+    }
+    private void RandoItem()
+    {
+        string[] Items = {"treasure", "GemBlack","GemBlue","GemGreen","GemPurple", "coin", "Health_Full"};
+        string itemDrobed;
+        int lowerBound = 0;
+        int upperBound = Items.Length;
+        int randomIndex = Random.Range(lowerBound, upperBound);
+        itemDrobed = Items[randomIndex];
+        item = GameObject.Find(itemDrobed);
+        Debug.Log(itemDrobed);
     }
 }
