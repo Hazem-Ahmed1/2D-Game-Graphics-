@@ -209,7 +209,7 @@ MonoBehaviour:
   wallSlidingSpeed: -3
   wallLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   wallCheck: {fileID: 5319958152860170863}
   wallCheckSize: {x: 0.05, y: 2}
   isTouchingWall: 0
@@ -353,6 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboTime: 1
+  enemyDamage: 15
+  enemies: {fileID: 0}
 --- !u!114 &5940063129979692720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799b86f6c71c7bb4bb64e40552312a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  MC_health: 0
   maxHealth: 10
   isDead: 0
 --- !u!1 &4097323663055533340
