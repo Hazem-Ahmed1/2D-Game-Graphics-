@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8453457689351153954}
   - component: {fileID: 8602324571195347677}
   - component: {fileID: 2603372881884691592}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Skeleton_Spearman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8449423486237178040}
   - component: {fileID: 8699943842814392149}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6050353688940722857}
   - component: {fileID: 2142329975744814616}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

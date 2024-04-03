@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2996490560656364240}
   - component: {fileID: 3942619377948268572}
   - component: {fileID: 8601459487550596285}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Bringer_of_death
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4940719365354854966}
   - component: {fileID: 2537210863678697427}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
