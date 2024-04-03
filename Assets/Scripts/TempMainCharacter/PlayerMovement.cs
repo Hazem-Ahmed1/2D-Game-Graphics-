@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     private Rigidbody2D body;
     public Animator anim;
-    private BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
+    public SpriteRenderer spriteRenderer;
     private float wallJumpCooldown;
     private float horizontalInput;
 
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -29,9 +31,10 @@ public class PlayerMovement : MonoBehaviour
 
         //Flip player when moving left-right
         if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
+            transform.localScale = new Vector3(5, 4, 1);
         else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-5, 4, 1);
+
 
         //Set animator parameters
         anim.SetBool("run", horizontalInput != 0);

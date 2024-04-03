@@ -7,7 +7,7 @@ public class FireAttack : StateMachineBehaviour
     
     public GameObject bullet;
     public GameObject BulletParent;
-    public float fireRate = 1;
+    private float fireRate = 0.5f;
     private float nextFireTime;
     BossController bossmove;
     private Rigidbody2D rb;

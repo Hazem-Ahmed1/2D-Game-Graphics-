@@ -15,7 +15,8 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
-  - NPC
+  - NPC_EvilBoss
+  - BloodNPC
   layers:
   - Default
   - TransparentFX
@@ -27,6 +28,9 @@ TagManager:
   - stoneBoss
   - 
   - 
+  - Enemy
+  - EvilBoss
+  - wall
   - 
   - 
   - 

@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D box;
+    public Animator animator;
 
     private bool isFacingright = true;
     private bool isRunning;
@@ -73,7 +74,7 @@ public class Character : MonoBehaviour
             return;
         }
         // Access the horizontal component from the input manager
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             canJump = true;

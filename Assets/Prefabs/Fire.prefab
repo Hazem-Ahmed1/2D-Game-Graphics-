@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5774027386670919317}
   - component: {fileID: 2958411991413496168}
   - component: {fileID: 5788754446525124585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ca06170ec39b74c91c0f6099518c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  Fire_Spark: {fileID: 9036953282763236115, guid: 78514b5d8ff775f42aefac13a1c716d0, type: 3}
+  speed_Bullet: 10
+  isFlipped: 0
 --- !u!58 &5788754446525124585
 CircleCollider2D:
   m_ObjectHideFlags: 0

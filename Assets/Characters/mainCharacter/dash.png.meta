@@ -139,10 +139,10 @@ TextureImporter:
       name: dash_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 46
         y: 0
-        width: 44
-        height: 61
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: dash_1
       rect:
         serializedVersion: 2
-        x: 76
+        x: 255
         y: 0
-        width: 45
-        height: 61
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: dash_2
       rect:
         serializedVersion: 2
-        x: 144
-        y: 2
-        width: 63
-        height: 55
+        x: 480
+        y: 0
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: dash_3
       rect:
         serializedVersion: 2
-        x: 230
+        x: 701
         y: 0
-        width: 62
-        height: 55
+        width: 155
+        height: 103
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

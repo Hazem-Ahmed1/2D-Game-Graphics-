@@ -139,12 +139,12 @@ TextureImporter:
       name: Attack_1_0
       rect:
         serializedVersion: 2
-        x: 39
+        x: 45
         y: 0
-        width: 58
-        height: 70
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,13 +160,13 @@ TextureImporter:
       name: Attack_1_1
       rect:
         serializedVersion: 2
-        x: 163
+        x: 245
         y: 0
-        width: 57
-        height: 94
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 25}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -181,13 +181,13 @@ TextureImporter:
       name: Attack_1_2
       rect:
         serializedVersion: 2
-        x: 286
+        x: 476
         y: 0
-        width: 136
-        height: 94
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 25}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -202,13 +202,13 @@ TextureImporter:
       name: Attack_1_3
       rect:
         serializedVersion: 2
-        x: 457
+        x: 728
         y: 0
-        width: 123
-        height: 89
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 25}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -223,13 +223,13 @@ TextureImporter:
       name: Attack_1_6
       rect:
         serializedVersion: 2
-        x: 644
+        x: 988
         y: 0
-        width: 125
-        height: 61
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 2}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -244,12 +244,12 @@ TextureImporter:
       name: Attack_1_7
       rect:
         serializedVersion: 2
-        x: 803
+        x: 1226
         y: 0
-        width: 67
-        height: 61
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: Attack_1_8
       rect:
         serializedVersion: 2
-        x: 879
+        x: 1407
         y: 0
-        width: 56
-        height: 61
+        width: 155
+        height: 103
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

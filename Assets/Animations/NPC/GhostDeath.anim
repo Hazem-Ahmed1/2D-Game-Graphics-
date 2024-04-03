@@ -22,46 +22,46 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -662566162, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.083333336
+    - time: 0.0625
       value: {fileID: 1250387746, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.16666667
+    - time: 0.125
       value: {fileID: 1202309262, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.25
+    - time: 0.1875
       value: {fileID: 86131039, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.33333334
+    - time: 0.25
       value: {fileID: -1297118222, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.41666666
+    - time: 0.3125
       value: {fileID: -1879362105, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.5
+    - time: 0.375
       value: {fileID: 1720563952, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.5833333
+    - time: 0.4375
       value: {fileID: -439953093, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.6666667
+    - time: 0.5
       value: {fileID: 486676892, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.75
+    - time: 0.5625
       value: {fileID: 418304937, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.8333333
+    - time: 0.625
       value: {fileID: 2102702795, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 0.9166667
+    - time: 0.6875
       value: {fileID: -1610062034, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1
+    - time: 0.75
       value: {fileID: 1675433472, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1.0833334
+    - time: 0.8125
       value: {fileID: -2086240731, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1.1666666
+    - time: 0.875
       value: {fileID: -406924386, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1.25
+    - time: 0.9375
       value: {fileID: 1271511108, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1.3333334
+    - time: 1
       value: {fileID: 1662332847, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
-    - time: 1.4166666
+    - time: 1.0625
       value: {fileID: 1809004420, guid: f61b5c9f32f286a45a035a82fae861cc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 80
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -101,7 +101,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.5
+    m_StopTime: 1.125
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -121,7 +121,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.5
+  - time: 1.125
     functionName: destroyEnemyObject
     data: 
     objectReferenceParameter: {fileID: 0}
