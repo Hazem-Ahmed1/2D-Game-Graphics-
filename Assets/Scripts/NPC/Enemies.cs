@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using Random = UnityEngine.Random;
 
 public class Enemies : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class Enemies : MonoBehaviour
     private int EnemyHealth = 10;
     [SerializeField]
     private Transform Player;
+    [SerializeField]
+    private GameObject[] items = new GameObject[7];
+    private GameObject item;
     private Animator anim;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -25,6 +30,7 @@ public class Enemies : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        item = RandoItem(items);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -88,6 +94,7 @@ public class Enemies : MonoBehaviour
     }
     private void Die()
     {
+        Instantiate(item, this.transform.position,Quaternion.identity);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
@@ -100,5 +107,14 @@ public class Enemies : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(this.transform.position, lineOfSite);
         Gizmos.DrawWireSphere(this.transform.position, attackRange);
+    }
+    private GameObject RandoItem(GameObject[] list)
+    {
+        GameObject itemDrobed;
+        int lowerBound = 0;
+        int upperBound = list.Length;
+        int randomIndex = Random.Range(lowerBound, upperBound);
+        itemDrobed = list[randomIndex];
+        return itemDrobed;
     }
 }

@@ -1,50 +1,66 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public static bool isPaused;
-    // Start is called before the first frame update
-    void Start()
-    {
-        pauseMenu.SetActive(false);
-    }
+    public GameObject pauseMenuUI;
+    private bool isPaused = false;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pauseMenuUI != null)
         {
-            if(isPaused)
-            {
-                ResumeGame();
-            }
-            else
-            {
-                pauseGame();
-            }
+            pauseMenuUI.SetActive(false);
         }
     }
 
-    public void pauseGame()
+    private void Update()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeLevel();
+            }
+            else
+            {
+                PauseLevel();
+            }
+        }
     }
-    public void ResumeGame()
+    public void RestartLevel()
     {
-        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void GoToMainMenu()
+    public void ResumeLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        isPaused = false;
+
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+        }
     }
+
+    public void PauseLevel()
+    {
+        Time.timeScale = 0f;
+        isPaused = true;
+
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+        }
+    }
+    public void QuitLevel()
+    {
+        Debug.Log("Game Over");
+        Application.Quit();
+    }
 }

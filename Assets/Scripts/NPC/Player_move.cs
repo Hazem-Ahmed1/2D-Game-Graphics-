@@ -50,4 +50,17 @@ public class Player_Move : MonoBehaviour
             
     //     }
     // }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(playerHealth);
+        if (collision.CompareTag("Arrow") || collision.CompareTag("damage"))
+        {
+            TakeDamage(1);
+        }
+    }
+    private void TakeDamage(int damage)
+    {
+        playerHealth -= damage;
+        Debug.Log(playerHealth);
+    }
 }

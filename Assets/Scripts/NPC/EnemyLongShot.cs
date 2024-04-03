@@ -23,6 +23,9 @@ public class EnemyLongShot : MonoBehaviour
     public GameObject Arrow;
     [SerializeField]
     public float fireRate = 1;
+    [SerializeField]
+    private GameObject[] items = new GameObject[7];
+    private GameObject item;
     public GameObject ArrowPoint;
     private Animator anim;
     private Rigidbody2D rb;
@@ -36,6 +39,7 @@ public class EnemyLongShot : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
+        item = RandoItem(items);
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         ArrowPoint = GameObject.FindWithTag("bulletparent").gameObject;
@@ -117,6 +121,7 @@ public class EnemyLongShot : MonoBehaviour
     }
     private void Die()
     {
+        Instantiate(item, this.transform.position,Quaternion.identity);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
@@ -148,5 +153,14 @@ public class EnemyLongShot : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, lineOfSite);
         Gizmos.DrawWireSphere(this.transform.position, attackRange);
         Gizmos.DrawWireSphere(this.transform.position, RunRange);
+    }
+    private GameObject RandoItem(GameObject[] list)
+    {
+        GameObject itemDrobed;
+        int lowerBound = 0;
+        int upperBound = list.Length;
+        int randomIndex = Random.Range(lowerBound, upperBound);
+        itemDrobed = list[randomIndex];
+        return itemDrobed;
     }
 }

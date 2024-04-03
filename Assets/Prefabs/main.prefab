@@ -204,7 +204,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 10
-  jumpForce: 14
+  jumpForce: 19
   canJump: 0
   wallSlidingSpeed: -3
   wallLayer:
