@@ -17,6 +17,10 @@ TagManager:
   - Spikes
   - NPC_EvilBoss
   - BloodNPC
+  - gems
+  - Health
+  - Coin
+  - treasure
   layers:
   - Default
   - TransparentFX
@@ -31,10 +35,10 @@ TagManager:
   - Enemy
   - EvilBoss
   - wall
-  - 
-  - 
-  - 
-  - 
+  - gems
+  - health
+  - coins
+  - treasure
   - 
   - 
   - 
