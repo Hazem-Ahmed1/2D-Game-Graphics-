@@ -122,12 +122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7651492c6b07a254482f787910228d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  lineOfSite: 5
-  attackRange: 1.66
+  speed: 5
+  lineOfSite: 9.38
+  attackRange: 3.42
   EnemyHealth: 10
   Player: {fileID: 0}
   Blood: {fileID: 2303663525422810272, guid: d85356cdd8538b644b1dd6ae141ff694, type: 3}
+  items:
+  - {fileID: 1917670769949428337, guid: 0d521209e6abd374fabf2562da5027a9, type: 3}
+  - {fileID: 4504582174303729865, guid: e61699150eed9154680e8693cf4bb0a1, type: 3}
+  - {fileID: 3093694154230658678, guid: 25dd1834578114d4db42233c8c8d6970, type: 3}
+  - {fileID: 5558283519799879582, guid: dd351bb9a2bb4d246b875371e00e6b4d, type: 3}
+  - {fileID: 643095949871958010, guid: 6d94b123fc5c5c242bad4efc56c6764a, type: 3}
+  - {fileID: 1892540993585444586, guid: 013313c798a4a704da4c803ee1266860, type: 3}
+  - {fileID: 220841869680253240, guid: cae3fa976df138f478a11fba41f74225, type: 3}
   isFlipped: 0
 --- !u!50 &2076406199433944417
 Rigidbody2D:

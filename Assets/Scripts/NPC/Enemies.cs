@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using Random = UnityEngine.Random;
 
 public class Enemies : MonoBehaviour
 {
@@ -15,7 +17,9 @@ public class Enemies : MonoBehaviour
     private int EnemyHealth = 10;
     [SerializeField]
     private Transform Player;
-    public GameObject item;
+    [SerializeField]
+    private GameObject[] items = new GameObject[7];
+    private GameObject item;
     private Animator anim;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
@@ -26,7 +30,7 @@ public class Enemies : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        RandoItem();
+        item = RandoItem(items);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -104,15 +108,13 @@ public class Enemies : MonoBehaviour
         Gizmos.DrawWireSphere(this.transform.position, lineOfSite);
         Gizmos.DrawWireSphere(this.transform.position, attackRange);
     }
-    private void RandoItem()
+    private GameObject RandoItem(GameObject[] list)
     {
-        string[] Items = {"treasure", "GemBlack","GemBlue","GemGreen","GemPurple", "coin", "Health_Full"};
-        string itemDrobed;
+        GameObject itemDrobed;
         int lowerBound = 0;
-        int upperBound = Items.Length;
+        int upperBound = list.Length;
         int randomIndex = Random.Range(lowerBound, upperBound);
-        itemDrobed = Items[randomIndex];
-        item = GameObject.Find(itemDrobed);
-        Debug.Log(itemDrobed);
+        itemDrobed = list[randomIndex];
+        return itemDrobed;
     }
 }
