@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 8699943842814392149}
   m_Layer: 7
   m_Name: AttackPoint
-  m_TagString: Untagged
+  m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.028299987, y: -0.36415, z: 0}
-    m_Extent: {x: 1.0053, y: 1.60255, z: 0}
+    m_Center: {x: -0.03305003, y: -0.36025, z: 0}
+    m_Extent: {x: 1.00105, y: 1.59745, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

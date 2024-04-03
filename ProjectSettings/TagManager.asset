@@ -21,6 +21,8 @@ TagManager:
   - Health
   - Coin
   - treasure
+  - Arrow
+  - damage
   layers:
   - Default
   - TransparentFX
@@ -39,9 +41,6 @@ TagManager:
   - health
   - coins
   - treasure
-  - 
-  - 
-  - 
   - 
   - 
   - 
