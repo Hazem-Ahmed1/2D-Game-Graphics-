@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2587914939139556079}
   m_Layer: 0
   m_Name: main
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +173,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 4a31fde21b03cdf4d873285a86beb21f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -215,7 +215,7 @@ MonoBehaviour:
   isWallSliding: 0
   wallJumpingAngle: {x: 0.5, y: 1.5}
   wallJumpingDirection: -1
-  wallJumpingForce: 10
+  wallJumpingForce: 20
   canDash: 1
   isDashing: 0
   DashingPower: 12
