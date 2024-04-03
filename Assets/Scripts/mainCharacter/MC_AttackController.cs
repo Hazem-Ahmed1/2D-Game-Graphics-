@@ -20,8 +20,13 @@ public class MC_AttackController : MonoBehaviour
 
     void Update()
     {
+<<<<<<< HEAD:Assets/Scripts/mainCharacter/MC_AttackController.cs
         isAttacking = false;
         if (Input.GetMouseButtonDown(0))
+=======
+
+        if (Input.GetKeyDown(KeyCode.E))
+>>>>>>> b4af3b7155ade28627e922be2b4174edd073b12e:Assets/Scripts/mainCharacter/AttackController.cs
         {
             float timeSinceLastAttack = Time.time - lastAttackTime;
 

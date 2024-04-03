@@ -29,7 +29,6 @@ public class Enemies : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Physics2D.IgnoreLayerCollision(8,8);
-        speed = 1;
     }
 
     // Update is called once per frame

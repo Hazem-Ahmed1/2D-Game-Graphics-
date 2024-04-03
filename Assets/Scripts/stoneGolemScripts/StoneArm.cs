@@ -1,35 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoneArm : MonoBehaviour
 {   
-    public float speed = 5f;
+    public float track = 1f;
+    private float timer = 0;
+    private float timeToDie = 0;
+    public float speed = 0.5f;
     public Rigidbody2D rb;
-    
-    public NPCAttributes attributes;
     private Transform player;
-    public int damage = 20 ;
+    public int damage = 20;
+    Vector3 direction;
 
-	void Start () {
+	void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (player.position.x > transform.position.x)
+        if(player) {
+            direction = (player.position - transform.position).normalized;
+        }
+        else{
+            direction = -transform.right.normalized;
+        }
+	}
+
+    void Update(){
+        if (timer < track)
         {
-            rb.velocity = Vector2.right * speed;
+            timer += Time.deltaTime;
         }
         else
         {
-            rb.velocity = Vector2.left * speed;
+            
+            rb.velocity = direction * speed;
+            timer = 0;
         }
-	}
-    void OnTriggerEnter2D (Collider2D hitInfo)
+        timeToDie +=Time.deltaTime;
+        Kill();
+    }
+    void OnTriggerEnter2D(Collider2D hitInfo)
 	{   
         Player p = hitInfo.GetComponent<Player>();
         if (p != null)
 		{
-			p.TakeDamage(20);
+			p.TakeDamage(damage);
+            Debug.Log("HIT SHOOT");
 		}
-		Destroy(gameObject);
+        Debug.Log(hitInfo.name);
+        if(hitInfo.name != "arm_projectile(Clone)")
+		    Destroy(gameObject);
 	}
+    public void Kill(){
+        if(timeToDie > 6){
+            Destroy(gameObject);
+        }
+    }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoneSpawner : MonoBehaviour
@@ -29,20 +27,18 @@ public class StoneSpawner : MonoBehaviour
 
     void SpawnStone()
     {
-        //float lowestPoint = transform.position.y - widthOffset;
         float highestPoint = transform.position.y + widthOffset;
         float randomX = Random.Range(transform.position.x - widthOffset, transform.position.x + widthOffset);
 
         float randomYOffset = Random.Range(-yVariation, yVariation);
         float yPos = highestPoint + randomYOffset;
 
-        Vector3 spawnPosition = new Vector3(randomX, yPos, 0);
+        Vector3 spawnPosition = new(randomX, yPos, 0);
         Instantiate(stones, spawnPosition, Quaternion.identity);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // Output the name of the object the stone has hit
         Destroy(gameObject);
     }
 }
