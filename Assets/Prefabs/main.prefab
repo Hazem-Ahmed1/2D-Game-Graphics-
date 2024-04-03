@@ -209,7 +209,7 @@ MonoBehaviour:
   wallSlidingSpeed: -3
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   wallCheck: {fileID: 5319958152860170863}
   wallCheckSize: {x: 0.05, y: 2}
   isTouchingWall: 0
@@ -219,9 +219,9 @@ MonoBehaviour:
   wallJumpingForce: 20
   canDash: 1
   isDashing: 0
-  DashingPower: 12
+  DashingPower: 30
   DashingTime: 0.01
-  DashingCoolDown: 1
+  DashingCoolDown: 0.2
   tr: {fileID: 9045681488437700726}
 --- !u!114 &325185021183614569
 MonoBehaviour:
