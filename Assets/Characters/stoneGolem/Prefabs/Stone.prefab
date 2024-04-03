@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4701875286089759143}
   - component: {fileID: 7043553542171703660}
   - component: {fileID: 8582132720018926460}
-  - component: {fileID: 3191034491453905949}
+  - component: {fileID: 1008805974046616081}
   m_Layer: 0
   m_Name: Stone
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4701875286089759143
 Rigidbody2D:
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.45
+  m_GravityScale: 0.21
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3191034491453905949
+--- !u!114 &1008805974046616081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 484382921387624854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0f2e12bc4ebd804babaf5b6cfc4254c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d56ae2ea01be6747a1535cfe12baf01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   impact: {fileID: 814442955930027415, guid: 2bd6979b8dba868479d3adb9082dd42a, type: 3}

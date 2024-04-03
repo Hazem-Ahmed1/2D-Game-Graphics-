@@ -77,8 +77,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void TakeDamage (int damage)
+    public void TakeDamage(int damage)
 	{
+        Debug.Log("HIT PLAYER");
 		health -= damage;
 
 		if (health <= 0)
@@ -88,7 +89,7 @@ public class Player : MonoBehaviour
 		}
 	}
     //TODO
-    // void Die ()
+    // void Die()
     // {
     //     Instantiate(deathEffect, transform.position, Quaternion.identity);
     //     Destroy(gameObject);
