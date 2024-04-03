@@ -111,7 +111,6 @@ public class NPC : MonoBehaviour
         if (currentAnimaton == newAnimation) return;
 
         animator.Play(newAnimation);
-        //Debug.Log(newAnimation+" is being played");
         currentAnimaton = newAnimation;
     }
 
@@ -128,7 +127,6 @@ public class NPC : MonoBehaviour
     {   
         ChangeAnimationState(NPC_DEATH);
         isDead = true;
-        Debug.Log("dead");
         Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length);
     }
 }

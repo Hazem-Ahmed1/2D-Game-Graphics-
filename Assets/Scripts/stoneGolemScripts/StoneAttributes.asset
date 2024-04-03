@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCAttributes
   healthPoints: 500
   lookRange: 15
-  atkRange: 10
+  atkRange: 50
   speed: 2
   damage: 20

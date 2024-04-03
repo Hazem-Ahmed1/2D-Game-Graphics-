@@ -4,16 +4,23 @@ public class StoneArm : MonoBehaviour
 {   
     public float track = 1f;
     private float timer = 0;
+    private float timeToDie = 0;
     public float speed = 0.5f;
     public Rigidbody2D rb;
     private Transform player;
     public int damage = 20;
+    Vector3 direction;
 
 	void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        KeepTracking();
+        if(player) {
+            direction = (player.position - transform.position).normalized;
+        }
+        else{
+            direction = -transform.right.normalized;
+        }
 	}
 
     void Update(){
@@ -23,27 +30,13 @@ public class StoneArm : MonoBehaviour
         }
         else
         {
-            KeepTracking();
+            
+            rb.velocity = direction * speed;
             timer = 0;
         }
+        timeToDie +=Time.deltaTime;
+        Kill();
     }
-
-    void KeepTracking(){
-        Vector3 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * speed;
-    }
-
-    // void OnCollisionEnter2D(Collision2D collision)
-	// {   
-    //     if (collision.gameObject.CompareTag("Player"))
-	// 	{
-    //         Player p = player.GetComponent<Player>();
-	// 		p.TakeDamage(damage);
-    //         Debug.Log("HIT SHOOT");
-	// 	}
-	// 	Destroy(gameObject);
-	// }
-
     void OnTriggerEnter2D(Collider2D hitInfo)
 	{   
         Player p = hitInfo.GetComponent<Player>();
@@ -56,10 +49,9 @@ public class StoneArm : MonoBehaviour
         if(hitInfo.name != "arm_projectile(Clone)")
 		    Destroy(gameObject);
 	}
-
-    // private void OnBecameInvisible()
-    // {
-    //     // Destroy the object when it becomes invisible
-    //     Destroy(gameObject);
-    // }
+    public void Kill(){
+        if(timeToDie > 6){
+            Destroy(gameObject);
+        }
+    }
 }

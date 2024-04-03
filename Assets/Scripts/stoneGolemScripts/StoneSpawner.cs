@@ -27,7 +27,6 @@ public class StoneSpawner : MonoBehaviour
 
     void SpawnStone()
     {
-        //float lowestPoint = transform.position.y - widthOffset;
         float highestPoint = transform.position.y + widthOffset;
         float randomX = Random.Range(transform.position.x - widthOffset, transform.position.x + widthOffset);
 
