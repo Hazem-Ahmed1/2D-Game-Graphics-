@@ -17,11 +17,15 @@ public class AdvancedEnemy : MonoBehaviour
     private Transform Player;
     [SerializeField]
     private GameObject Blood;
+    [SerializeField]
+    private GameObject[] items = new GameObject[7];
+    private GameObject item;
     private Animator anim;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
     private CircleCollider2D Circle;
     private GameObject ChooseColider;
+    
     private enum MovementState {idle, running, attack}
     MovementState state = MovementState.idle;
     public bool isFlipped = false;
@@ -30,7 +34,7 @@ public class AdvancedEnemy : MonoBehaviour
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").transform;
-        // Blood = GameObject.FindGameObjectWithTag("BloodNPC");
+        item = RandoItem(items);
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -96,6 +100,7 @@ public class AdvancedEnemy : MonoBehaviour
     }
     private void Die()
     {
+        Instantiate(item, this.transform.position,Quaternion.identity);
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("death");
     }
@@ -127,5 +132,14 @@ public class AdvancedEnemy : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
+    }
+    private GameObject RandoItem(GameObject[] list)
+    {
+        GameObject itemDrobed;
+        int lowerBound = 0;
+        int upperBound = list.Length;
+        int randomIndex = Random.Range(lowerBound, upperBound);
+        itemDrobed = list[randomIndex];
+        return itemDrobed;
     }
 }
