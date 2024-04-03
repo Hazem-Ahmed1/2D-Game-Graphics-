@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - StoneGolem
   - pip
   - Enemy
   - oneWayPlatform
@@ -13,17 +15,22 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
+  - NPC_EvilBoss
+  - BloodNPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ground
+  - 
   - Water
   - UI
-  - Wall
   - Ground
+  - stoneBoss
   - 
   - 
+  - Enemy
+  - EvilBoss
+  - wall
   - 
   - 
   - 

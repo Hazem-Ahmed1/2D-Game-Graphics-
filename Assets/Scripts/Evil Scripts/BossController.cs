@@ -6,18 +6,48 @@ public class BossController : MonoBehaviour
 {
     private enum MovementState { Idle, Move, Attack }
     private Rigidbody2D rb;
-    private SpriteRenderer SR;
+    public GameObject NPCS1;
+    public GameObject NPCS2;
+    public GameObject NPCS3;
+    public GameObject NPCS4;
+    public bool Clone = true;
+    private float nextFireTime;
+    public float fireRate = 1;
+     GameObject Better_Call_NPC;
     Animator boss_animator;
     public Transform player;
     public bool isFlipped = false;
-    public int BossHealth = 5;
+    public int Damage = 10;
+    private bool heal = true;
     // Start is called before the first frame update
     void Start()
     {
+        Better_Call_NPC = GameObject.FindWithTag("NPC_EvilBoss").gameObject;
         boss_animator = GetComponent<Animator>();
-        SR = GetComponent <SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player").transform;
+    }
+
+    private void FixedUpdate()
+    {
+        if (heal && HealthBarBoss.Health <= 35)
+        {
+            boss_animator.SetTrigger("Heal");
+            HealthBarBoss.Healing(25);
+            heal = false;
+
+        }
+
+        if (nextFireTime < Time.time && HealthBarBoss.Health <= 50 && Clone)
+        {
+            Instantiate(NPCS1, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS2, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS3, Better_Call_NPC.transform.position, Quaternion.identity);
+            Instantiate(NPCS4, Better_Call_NPC.transform.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+            Clone = false;
+        }
+        Physics2D.IgnoreLayerCollision(8, 7);
 
     }
     public void LookAtPlayer()
@@ -41,19 +71,19 @@ public class BossController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("bullet") && BossHealth >= 0)
+        string nameClip = boss_animator.GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if (collision.gameObject.CompareTag("bullet") && HealthBarBoss.Health >= 0 && nameClip != "Idle")
         {
-            BossHealth--;
+            HealthBarBoss.TakeDamage(Damage);
             boss_animator.SetTrigger("Take Hit");
-            Debug.Log(BossHealth);
             StartCoroutine("Hurt");
-            if (BossHealth == 0)
+            if (HealthBarBoss.Health <= 0)
             {
                 boss_animator.ResetTrigger("Take Hit");
                 Die();
             }
         }
-        
+
     }
 
     IEnumerator Hurt()
