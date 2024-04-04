@@ -31,12 +31,21 @@ public class MC_Health : MonoBehaviour
             {
                 Death();
             }
+            else
+            {
+                StartCoroutine(TriggerHurtAnimation());
+            }
         }
     }
     public void TakeDamage(int damage)
     {
         MC_health -= damage;
         Debug.Log("player_health = "+MC_health);
+    }
+    IEnumerator TriggerHurtAnimation()
+    {
+        animator.SetTrigger("isHurt");
+        yield return new WaitForSeconds(2.0f);
     }
     public void Death()
     {
@@ -53,7 +62,8 @@ public class MC_Health : MonoBehaviour
 
 }
 
-// hurt animations
-// shooting 
-// attacking animations 
+// Done -- hurt animations
+// shooting
+// UI
+// FIXED -- attacking animations 
 // FIXED -- Death animation dosen't work while attacking 
