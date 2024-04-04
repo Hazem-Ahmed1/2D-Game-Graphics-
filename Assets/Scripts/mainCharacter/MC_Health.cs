@@ -6,13 +6,14 @@ public class MC_Health : MonoBehaviour
 {
     [Header("Health")]
     [SerializeField] private int MC_health;
-    [SerializeField] private int maxHealth = 10;
-    [SerializeField] private bool isDead = false;
+    [SerializeField] private int maxHealth = 100;
     private Animator animator;
+    public static bool isStatic = false;
     private Rigidbody2D rb;
     void Start()
     {
-        MC_health = maxHealth;   
+        MC_health = maxHealth;
+        Debug.Log("MC_health = " + MC_health);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -25,7 +26,7 @@ public class MC_Health : MonoBehaviour
     {
         if ((collision.CompareTag("damage") || collision.CompareTag("Arrow")) && MC_health >= 0)
         {
-            TakeDamage(1);
+            TakeDamage(15);
             if (MC_health <= 0)
             {
                 Death();
@@ -39,14 +40,20 @@ public class MC_Health : MonoBehaviour
     }
     public void Death()
     {
-        //isDead = true;
-        rb.bodyType = RigidbodyType2D.Static;
+        isStatic = true;
         animator.SetTrigger("isDead");
+        rb.bodyType = RigidbodyType2D.Static;
     }
     public void MC_Destroy()
     {
+       // Debug.Log("isStatic = "+isStatic);
         Destroy(this.gameObject);
     }
     
 
 }
+
+// hurt animations
+// shooting 
+// attacking animations 
+// FIXED -- Death animation dosen't work while attacking 

@@ -45,6 +45,7 @@ public class Main_Character : MonoBehaviour
     [SerializeField] private float DashingCoolDown = 1f;
     [SerializeField] private TrailRenderer tr;
 
+
     // Start method is called once before the first frame update
     // Awake method executed once when the game starts even if the component wasen't called
     private void Awake()
@@ -87,23 +88,26 @@ public class Main_Character : MonoBehaviour
     }
     private void Move()
     {
-        if (isDashing)
+        if (isDashing || MC_Health.isStatic)
         {
             return;
         }
         // Change the running speed and directions
-        if (!isWallSliding && !isTouchingWall)
-        // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
+        if (!MC_Health.isStatic)
         {
-            body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
-        }
-        if (body.velocity.x != 0)
-        {
-            isRunning = true;
-        }
-        else
-        {
-            isRunning = false;
+            if (!isWallSliding && !isTouchingWall)
+            // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
+            {
+                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+            }
+            if (body.velocity.x != 0)
+            {
+                isRunning = true;
+            }
+            else
+            {
+                isRunning = false;
+            }
         }
     }
     private void CheckDirection()

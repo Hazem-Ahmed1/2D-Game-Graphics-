@@ -6,9 +6,6 @@ public class MC_AttackController : MonoBehaviour
     private float lastAttackTime;
     private int comboCount;
     private Animator animator;
-    private bool isAttacking;
-    [Header("Damage")]
-    [SerializeField] private int enemyDamage = 15;
 
     void Start()
     {
@@ -19,9 +16,8 @@ public class MC_AttackController : MonoBehaviour
 
     void Update()
     {
-        isAttacking = false;
         if (Input.GetMouseButtonDown(0))
-  {
+        {
             float timeSinceLastAttack = Time.time - lastAttackTime;
 
             if (timeSinceLastAttack > comboTime)
@@ -35,15 +31,11 @@ public class MC_AttackController : MonoBehaviour
             if (comboCount % 2 == 1)
             {
                 animator.SetTrigger("Attack1");
-                isAttacking = true;
-                // Send a Damage to the enemy
 
             }
             else
             {
                 animator.SetTrigger("Attack2");
-                isAttacking = true;
-                // Send a Damage to the enemy
             }
 
             if (comboCount > 2)
