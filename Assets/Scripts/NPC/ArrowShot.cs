@@ -13,9 +13,12 @@ public class ArrowShot : MonoBehaviour
     {
         ArrowRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
-        LookAtPlayer();
-        Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed;
-        ArrowRB.velocity = new Vector2(moveDir.x, moveDir.y);
+        if (target != null)
+        {
+            LookAtPlayer();
+            Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed;
+            ArrowRB.velocity = new Vector2(moveDir.x, moveDir.y);
+        }
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

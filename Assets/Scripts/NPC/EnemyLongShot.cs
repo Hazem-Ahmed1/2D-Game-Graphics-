@@ -53,18 +53,24 @@ public class EnemyLongShot : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
-        if(distanceFromPlayer <= RunRange && distanceFromPlayer >= attackRange)
+       if (Player != null) 
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed* Time.deltaTime);
+            float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
+            if (distanceFromPlayer <= RunRange && distanceFromPlayer >= attackRange)
+            {
+                transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed * Time.deltaTime);
+            }
+            UpdateAnimationState(distanceFromPlayer, EnemyHealth);
         }
-        UpdateAnimationState(distanceFromPlayer , EnemyHealth);
 
     }
 
     private void Update()
     {
-        LookAtPlayer();
+        if (Player != null)
+        {
+            LookAtPlayer();
+        }
     }
     private void UpdateAnimationState(float distanceFromPlayer, int EnemyHealth)
     {
@@ -93,7 +99,7 @@ public class EnemyLongShot : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") && EnemyHealth >= 0)
+        if ((collision.gameObject.CompareTag("Player_Bullet") || collision.gameObject.CompareTag("Player_Sowrd")) && EnemyHealth >= 0)
         {
             TakeDamage(1);
             if (EnemyHealth <= 0)

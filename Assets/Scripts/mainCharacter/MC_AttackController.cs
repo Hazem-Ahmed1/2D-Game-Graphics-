@@ -9,7 +9,6 @@ public class MC_AttackController : MonoBehaviour
     private bool isAttacking;
     [Header("Damage")]
     [SerializeField] private int enemyDamage = 15;
-    public Enemies enemies;
 
     void Start()
     {
@@ -54,11 +53,4 @@ public class MC_AttackController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (isAttacking && collision.gameObject.tag == "enemy")
-        {
-            //enemies.TakeDamage(enemyDamage);
-        }
-    }
 }

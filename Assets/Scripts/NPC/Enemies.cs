@@ -34,18 +34,21 @@ public class Enemies : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(8,8);
+        Physics2D.IgnoreLayerCollision(7,8);
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
-        if(distanceFromPlayer < lineOfSite && distanceFromPlayer >= attackRange)
+        if (Player != null)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed* Time.deltaTime);
+            float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
+            if (distanceFromPlayer < lineOfSite && distanceFromPlayer >= attackRange)
+            {
+                transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed * Time.deltaTime);
+            }
+            UpdateAnimationState(distanceFromPlayer, EnemyHealth);
         }
-        UpdateAnimationState(distanceFromPlayer , EnemyHealth);
     }
     private void UpdateAnimationState(float distanceFromPlayer, int EnemyHealth)
     {
@@ -71,7 +74,7 @@ public class Enemies : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") && EnemyHealth >= 0)
+        if ((collision.gameObject.CompareTag("Player_Bullet") || collision.gameObject.CompareTag("Player_Sowrd")) && EnemyHealth >= 0)
         {
             TakeDamage(1);
             if (EnemyHealth <= 0)
@@ -81,7 +84,7 @@ public class Enemies : MonoBehaviour
             }
         }
     }
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         EnemyHealth = EnemyHealth - damage;
         anim.SetTrigger("hurt");
