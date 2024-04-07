@@ -111,7 +111,10 @@ public class EnemyLongShot : MonoBehaviour
     }
     public void createArrowShot()
     {
+        if (Player != null)
+        {
             Instantiate(Arrow, ArrowPoint.transform.position, Quaternion.identity);
+        }
     }
     private void TakeDamage(int damage)
     {
