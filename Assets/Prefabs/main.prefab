@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 250107459980698575}
+  filed: {fileID: 6406982336264961615}
 --- !u!1 &1599852588848670681
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,9 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff70c88d56d6274cb22b251c3675703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
   comboTime: 1
-  BulletParent: {fileID: 0}
 --- !u!114 &5940063129979692720
 MonoBehaviour:
   m_ObjectHideFlags: 0
