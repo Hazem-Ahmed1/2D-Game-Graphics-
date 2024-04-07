@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MC_HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private Slider slider;
+    public void UpdateHealthBar(float currentValue , float maxValue)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        slider.value = currentValue / maxValue;
     }
 }

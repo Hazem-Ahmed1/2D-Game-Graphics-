@@ -5,8 +5,9 @@ using UnityEngine;
 public class MC_Health : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private int MC_health;
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private float MC_health;
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private MC_HealthBar healthBar;
     private Animator animator;
     public static bool isStatic = false;
     private Rigidbody2D rb;
@@ -16,6 +17,8 @@ public class MC_Health : MonoBehaviour
         Debug.Log("MC_health = " + MC_health);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<MC_HealthBar>();
+        healthBar.UpdateHealthBar(MC_health, maxHealth);
     }
 
     void Update()
@@ -40,6 +43,7 @@ public class MC_Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         MC_health -= damage;
+        healthBar.UpdateHealthBar(MC_health, maxHealth);
         Debug.Log("player_health = "+MC_health);
     }
     IEnumerator TriggerHurtAnimation()

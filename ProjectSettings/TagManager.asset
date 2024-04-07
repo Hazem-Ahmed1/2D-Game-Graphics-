@@ -21,6 +21,11 @@ TagManager:
   - Player_Bullet
   - Player_Sowrd
   - Arrow
+  - gems
+  - Coin
+  - treasure
+  - BulletParentPlayer
+  - BulletParentPlayer2
   layers:
   - Default
   - TransparentFX
