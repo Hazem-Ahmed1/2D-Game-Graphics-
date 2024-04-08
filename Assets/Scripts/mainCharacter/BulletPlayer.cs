@@ -8,6 +8,7 @@ public class BulletPlayer : MonoBehaviour
     public float speed_Bullet = 10;
     Rigidbody2D BulletRB;
     SpriteRenderer BulletSR;
+    [SerializeField] GameObject BulletVFX;
     public bool isFlipped = false;
     // Start is called before the first frame update
     void Start()
@@ -29,13 +30,10 @@ public class BulletPlayer : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("stoneBoss"))
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject,3);
-        }
+
+        Destroy(this.gameObject);
+        var bullet_v = Instantiate(BulletVFX, gameObject.transform.position, Quaternion.identity);
+        Destroy(bullet_v,0.760f);
+
     }
 }

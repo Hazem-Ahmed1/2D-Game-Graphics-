@@ -14,8 +14,9 @@ public class treasure : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-        Instantiate(Light, this.transform.position,Quaternion.identity);
-        Destroy(this.gameObject);
+            Instantiate(Light, this.transform.position,Quaternion.identity);
+            Destroy(this.gameObject);
+            ScoreManager.instance.IncrementScore(50);
         }
     }
 }

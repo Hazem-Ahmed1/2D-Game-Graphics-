@@ -19,22 +19,18 @@ public class PlayerCollect : MonoBehaviour
         if (collision.gameObject.CompareTag("gems"))
         {
             Score += 30;
-            Debug.Log(Score);
         }
         else if (collision.gameObject.CompareTag("Coin"))
         {
             Score += 5;
-            Debug.Log(Score);
         }
         else if (collision.gameObject.CompareTag("treasure"))
         {
             Score += 45;
-            Debug.Log(Score);
         }
         else if (collision.gameObject.CompareTag("Health"))
         {
             Health += 20;
-            Debug.Log(Health);
         }
     }
 }
