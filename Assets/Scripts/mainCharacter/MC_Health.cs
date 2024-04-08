@@ -11,6 +11,8 @@ public class MC_Health : MonoBehaviour
     private Animator animator;
     public static bool isStatic = false;
     private Rigidbody2D rb;
+    [SerializeField] GameObject Bloodvfx;
+    [SerializeField] Transform bloodPos;
     void Start()
     {
         MC_health = maxHealth;
@@ -44,6 +46,8 @@ public class MC_Health : MonoBehaviour
     {
         MC_health -= damage;
         healthBar.UpdateHealthBar(MC_health, maxHealth);
+        var blood = Instantiate(Bloodvfx,bloodPos.transform.position, Quaternion.identity);
+        Destroy(blood,0.5f);
         Debug.Log("player_health = "+MC_health);
     }
     IEnumerator TriggerHurtAnimation()
