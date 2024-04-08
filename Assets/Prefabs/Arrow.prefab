@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8698693333340397780}
   - component: {fileID: 1024981009190094415}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2955788598698218132}
   - component: {fileID: 2239598641346944554}
   - component: {fileID: -8394494106047588171}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Arrow
   m_TagString: Arrow
   m_Icon: {fileID: 0}

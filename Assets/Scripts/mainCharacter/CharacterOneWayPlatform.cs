@@ -14,6 +14,9 @@ public class CharacterOneWayPlatform : MonoBehaviour
                 StartCoroutine(DisableCollision());
             }
         }
+        if(Input.GetKeyDown(KeyCode.LeftShift)){
+            StartCoroutine(DisableCollisionWithDash());
+        }
     }
 
 
@@ -30,14 +33,26 @@ public class CharacterOneWayPlatform : MonoBehaviour
     }
 
     private IEnumerator DisableCollision(){
-
         BoxCollider2D platformerCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
         Physics2D.IgnoreCollision(playerCollider,platformerCollider);
+        
         yield return new WaitForSeconds(1f);
         Physics2D.IgnoreCollision(playerCollider,platformerCollider,false);
-
+        
     }
 
+    private IEnumerator DisableCollisionWithDash()
+    {
+        Physics2D.IgnoreLayerCollision(13,7,true);
+        Physics2D.IgnoreLayerCollision(13,10,true);
+        Physics2D.IgnoreLayerCollision(13,11,true);
+        Physics2D.IgnoreLayerCollision(13,14,true);
+        yield return new WaitForSeconds(2f);
+        Physics2D.IgnoreLayerCollision(13,7,false);
+        Physics2D.IgnoreLayerCollision(13,10,false);
+        Physics2D.IgnoreLayerCollision(13,11,false);
+        Physics2D.IgnoreLayerCollision(13,14,false);
+    }
 
 
 }
