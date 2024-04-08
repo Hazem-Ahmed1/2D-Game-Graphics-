@@ -7,19 +7,19 @@ public class MC_Health : MonoBehaviour
     [Header("Health")]
     [SerializeField] private float MC_health;
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private MC_HealthBar healthBar;
+    [SerializeField] private GameObject UIhealthBar;
     private Animator animator;
     public static bool isStatic = false;
     private Rigidbody2D rb;
     [SerializeField] GameObject Bloodvfx;
     [SerializeField] Transform bloodPos;
+    [SerializeField] MC_HealthBar healthBar;
     void Start()
     {
         MC_health = maxHealth;
-        Debug.Log("MC_health = " + MC_health);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        healthBar = GetComponentInChildren<MC_HealthBar>();
+        healthBar = UIhealthBar.GetComponentInChildren<MC_HealthBar>();
         healthBar.UpdateHealthBar(MC_health, maxHealth);
     }
 
@@ -48,7 +48,6 @@ public class MC_Health : MonoBehaviour
         healthBar.UpdateHealthBar(MC_health, maxHealth);
         var blood = Instantiate(Bloodvfx,bloodPos.transform.position, Quaternion.identity);
         Destroy(blood,0.5f);
-        Debug.Log("player_health = "+MC_health);
     }
     IEnumerator TriggerHurtAnimation()
     {
@@ -63,7 +62,6 @@ public class MC_Health : MonoBehaviour
     }
     public void MC_Destroy()
     {
-       // Debug.Log("isStatic = "+isStatic);
         Destroy(this.gameObject);
     }
     

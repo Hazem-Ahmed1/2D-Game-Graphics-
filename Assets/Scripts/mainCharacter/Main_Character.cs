@@ -17,13 +17,12 @@ public class Main_Character : MonoBehaviour
     private float horizontalInput;
 
     [Header("Ground")]
-    [SerializeField] private bool isGround;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Movement")]
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private bool canJump;
+    [SerializeField] public bool canJump;
 
     [Header("WallSliding")]
     [SerializeField] private float wallSlidingSpeed;
@@ -42,13 +41,13 @@ public class Main_Character : MonoBehaviour
     [SerializeField] private bool canDash = true;
     [SerializeField] private bool isDashing = false;
     [SerializeField] private float DashingPower = 24f;
-    [SerializeField] private float DashingTime = 1f;
     [SerializeField] private float DashingCoolDown = 1f;
     [SerializeField] private TrailRenderer tr;
     [SerializeField] private GameObject Bullet;
     [SerializeField] private GameObject BulletParent1;
     [SerializeField] private GameObject BulletParent2;
     public static bool isFlied;
+    public static bool EndRunning = false;
 
 
     // Start method is called once before the first frame update
@@ -94,6 +93,11 @@ public class Main_Character : MonoBehaviour
     }
     private void Move()
     {
+        EndRunning = false;
+        if (!isRunning || isDashing)
+        {
+            EndRunning = true;
+        }
         if (isDashing || MC_Health.isStatic)
         {
             return;
@@ -137,30 +141,28 @@ public class Main_Character : MonoBehaviour
     void flip()
     {
         // Jumping direction will be the opposite of your current movement
-        wallJumpingDirection *= -1; 
+        wallJumpingDirection *= -1;
         isFacingright = !isFacingright;
         transform.Rotate(0.0f, 180.0f, 0.0f);
     }
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpForce);
-        Debug.Log("normal jump");
     }
     private bool isGrounded()
     {
-        return isGround = Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
+        return Physics2D.BoxCast(box.bounds.center, box.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
     }
     private bool isWalled()
     {
-        return isTouchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize,0 ,wallLayer);
+        return isTouchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, wallLayer);
     }
     private void WallSlide()
     {
         if (isWalled() && !isGrounded() && body.velocity.y < 0)
         {
             isWallSliding = true;
-            //Debug.Log(isTouchingWall);
-            body.velocity = new Vector2(body.velocity.x,wallSlidingSpeed);
+            body.velocity = new Vector2(body.velocity.x, wallSlidingSpeed);
         }
         else
         {
@@ -169,11 +171,9 @@ public class Main_Character : MonoBehaviour
     }
     private void WallJump()
     {
-        if ((isWallSliding && isTouchingWall)&& Input.GetButtonDown("Jump")) 
+        if ((isWallSliding && isTouchingWall) && Input.GetButtonDown("Jump"))
         {
             body.AddForce(new Vector2(wallJumpingForce * wallJumpingDirection * wallJumpingAngle.x, wallJumpingForce * wallJumpingAngle.y), ForceMode2D.Impulse);
-            //canJump = false;
-            Debug.Log("walljump");
         }
     }
     private void OnDrawGizmos()
@@ -201,6 +201,7 @@ public class Main_Character : MonoBehaviour
     {
         anim.SetBool("isDashing", isDashing);
         anim.SetBool("isRunning", isRunning);
+        anim.SetBool("EndRunning", EndRunning);
         anim.SetBool("isGrounded", isGrounded());
         anim.SetFloat("yVelocity", body.velocity.y);
         anim.SetBool("isSliding", isWallSliding);
@@ -208,8 +209,8 @@ public class Main_Character : MonoBehaviour
 
     public void createBulletShot()
     {
-            Instantiate(Bullet, BulletParent1.transform.position, Quaternion.identity);
-            Instantiate(Bullet, BulletParent2.transform.position, Quaternion.identity);
+        Instantiate(Bullet, BulletParent1.transform.position, Quaternion.identity);
+        Instantiate(Bullet, BulletParent2.transform.position, Quaternion.identity);
     }
 
 }

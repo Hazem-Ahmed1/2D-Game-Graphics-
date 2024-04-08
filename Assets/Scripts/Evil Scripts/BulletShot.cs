@@ -8,7 +8,6 @@ public class BulletShot : MonoBehaviour
     public GameObject Fire_Spark;
     private float speed_Bullet = 20;
     Rigidbody2D bulletRB;
-    BossController bossmove;
     public bool isFlipped = false;
 
 
@@ -16,15 +15,11 @@ public class BulletShot : MonoBehaviour
     void Start()
     {
         bulletRB = GetComponent<Rigidbody2D>();
-        bossmove = GetComponent<BossController>();
         target = GameObject.FindGameObjectWithTag("Player");
         LookAtPlayer();
         Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed_Bullet;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        Physics2D.IgnoreLayerCollision(8, 8);
-        Physics2D.IgnoreLayerCollision(8, 7);
-
-
+        Physics2D.IgnoreLayerCollision(11, 11);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,10 +44,5 @@ public class BulletShot : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

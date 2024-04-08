@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712629453579107899}
   - component: {fileID: 7114297620210288413}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8331768978675238476}
   - component: {fileID: 3589610917045101456}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 453329813098997724}
   - component: {fileID: 6822854492766372588}
   - component: {fileID: 5293047331197588148}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
