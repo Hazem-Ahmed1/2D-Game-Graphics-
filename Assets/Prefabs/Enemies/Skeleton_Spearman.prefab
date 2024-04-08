@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8453457689351153954}
   - component: {fileID: 8602324571195347677}
   - component: {fileID: 2603372881884691592}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Skeleton_Spearman
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8449423486237178040}
   - component: {fileID: 8699943842814392149}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ Transform:
   m_GameObject: {fileID: 4161863911651521714}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.77999973, y: -0.099999905, z: 0.7390823}
+  m_LocalPosition: {x: 1.02, y: -0.099999905, z: 0.7390823}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -249,7 +249,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161863911651521714}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -274,9 +274,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: -0.58}
+  m_Offset: {x: 0.47, y: -0.43}
   serializedVersion: 2
-  m_Radius: 0.22
+  m_Radius: 0.3719724
 --- !u!1 &9167954308674846169
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6050353688940722857}
   - component: {fileID: 2142329975744814616}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.03305003, y: -0.36025, z: 0}
-    m_Extent: {x: 1.00105, y: 1.59745, z: 0}
+    m_Center: {x: -0.037850022, y: -0.3679, z: 0}
+    m_Extent: {x: 1.01205, y: 1.6019, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

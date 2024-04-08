@@ -6,6 +6,7 @@ public class MC_AttackController : MonoBehaviour
     private float lastAttackTime;
     private int comboCount;
     private Animator animator;
+    [SerializeField] AudioSource audioSource;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class MC_AttackController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             float timeSinceLastAttack = Time.time - lastAttackTime;
 
@@ -31,7 +32,7 @@ public class MC_AttackController : MonoBehaviour
             if (comboCount % 2 == 1)
             {
                 animator.SetTrigger("Attack1");
-
+                audioSource.Play();
             }
             else
             {
@@ -43,7 +44,7 @@ public class MC_AttackController : MonoBehaviour
                 comboCount = 1;
             }
         }
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             animator.SetTrigger("isShoot");
         }

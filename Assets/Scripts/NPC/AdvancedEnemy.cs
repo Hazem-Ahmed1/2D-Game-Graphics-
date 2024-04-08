@@ -94,7 +94,6 @@ public class AdvancedEnemy : MonoBehaviour
         Instantiate(Blood, this.transform.position,Quaternion.identity);
         EnemyHealth = EnemyHealth - damage;
         anim.SetTrigger("hurt");
-        Debug.Log(EnemyHealth);
         StartCoroutine("Hurt");
     }
     IEnumerator Hurt()

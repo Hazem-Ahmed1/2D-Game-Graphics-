@@ -88,7 +88,6 @@ public class Enemies : MonoBehaviour
     {
         EnemyHealth = EnemyHealth - damage;
         anim.SetTrigger("hurt");
-        Debug.Log(EnemyHealth);
         StartCoroutine("Hurt");
     }
     IEnumerator Hurt()
