@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 
 public class Main_Character : MonoBehaviour
@@ -44,6 +45,10 @@ public class Main_Character : MonoBehaviour
     [SerializeField] private float DashingTime = 1f;
     [SerializeField] private float DashingCoolDown = 1f;
     [SerializeField] private TrailRenderer tr;
+    [SerializeField] private GameObject Bullet;
+    [SerializeField] private GameObject BulletParent1;
+    [SerializeField] private GameObject BulletParent2;
+    public static bool isFlied;
 
 
     // Start method is called once before the first frame update
@@ -55,6 +60,7 @@ public class Main_Character : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
         wallJumpingAngle.Normalize();
+        isFlied = false;
     }
 
     // Update is called once per frame
@@ -120,10 +126,12 @@ public class Main_Character : MonoBehaviour
         if (horizontalInput > 0 && !isFacingright)
         {
             flip();
+            isFlied = false;
         }
         else if (horizontalInput < 0 && isFacingright)
         {
             flip();
+            isFlied = true;
         }
     }
     void flip()
@@ -144,7 +152,7 @@ public class Main_Character : MonoBehaviour
     }
     private bool isWalled()
     {
-       return isTouchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize,0 ,wallLayer);
+        return isTouchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize,0 ,wallLayer);
     }
     private void WallSlide()
     {
@@ -196,6 +204,12 @@ public class Main_Character : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded());
         anim.SetFloat("yVelocity", body.velocity.y);
         anim.SetBool("isSliding", isWallSliding);
+    }
+
+    public void createBulletShot()
+    {
+            Instantiate(Bullet, BulletParent1.transform.position, Quaternion.identity);
+            Instantiate(Bullet, BulletParent2.transform.position, Quaternion.identity);
     }
 
 }

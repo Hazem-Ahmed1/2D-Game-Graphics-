@@ -79,7 +79,7 @@ public class AdvancedEnemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name.Equals("Bullet") && EnemyHealth >= 0)
+        if ((collision.gameObject.CompareTag("Player_Bullet") || collision.gameObject.CompareTag("Player_Sowrd")) && EnemyHealth >= 0)
         {
             TakeDamage(1);
             if (EnemyHealth <= 0)

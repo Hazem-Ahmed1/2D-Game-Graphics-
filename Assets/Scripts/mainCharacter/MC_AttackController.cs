@@ -43,6 +43,10 @@ public class MC_AttackController : MonoBehaviour
                 comboCount = 1;
             }
         }
+        else if (Input.GetMouseButtonDown(1))
+        {
+            animator.SetTrigger("isShoot");
+        }
     }
 
 }
