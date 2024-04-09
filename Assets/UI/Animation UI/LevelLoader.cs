@@ -10,20 +10,21 @@ public class LevelLoader : MonoBehaviour
     public void LoadNextLevel()
     {
         this.gameObject.SetActive(true);
-        StartCoroutine(LoadLevel("Level_1"));
+        // StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(4));
     }
     public void MainMenuButton()
     {
         this.gameObject.SetActive(true);
-        StartCoroutine(LoadLevel("MainMenu"));
+        StartCoroutine(LoadLevel(2));
     }
 
-    IEnumerator LoadLevel(string levelName)
+    IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("start");
         
         yield return new WaitForSeconds(transitionTime);
         
-        SceneManager.LoadScene(levelName);
+        SceneManager.LoadScene(levelIndex);
     }
 }

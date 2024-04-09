@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributes: {fileID: 11400000, guid: dc79e48d8bb278f41a290fb5f8b3a060, type: 2}
-  currHealth: 100
+  currHealth: 300
   firePoint: {fileID: 8228141676910760869}
   firePoint2: {fileID: 2577472090234236307}
   stonePrefap: {fileID: 1520600490391029554, guid: 0e3f838b08fe1c7408a5edad2d43d25e, type: 3}

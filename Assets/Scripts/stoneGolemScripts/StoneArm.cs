@@ -43,11 +43,8 @@ public class StoneArm : MonoBehaviour
         if (p != null)
 		{
 			p.TakeDamage(damage);
-            Debug.Log("HIT SHOOT");
+            Destroy(this.gameObject);
 		}
-        Debug.Log(hitInfo.name);
-        if(hitInfo.name != "arm_projectile(Clone)")
-		    Destroy(gameObject);
 	}
     public void Kill(){
         if(timeToDie > 6){

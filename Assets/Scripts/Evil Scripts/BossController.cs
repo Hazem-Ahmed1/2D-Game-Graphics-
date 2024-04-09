@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossController : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class BossController : MonoBehaviour
     private bool heal = true;
     public AudioSource audioSource;
     public AudioClip laugh,death,hurt,fire;
+    public GameObject VictoryPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +52,6 @@ public class BossController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
             Clone = false;
         }
-        Physics2D.IgnoreLayerCollision(8, 7);
 
     }
     public void LookAtPlayer()
@@ -117,5 +118,9 @@ public class BossController : MonoBehaviour
     public void destroyEnemyObject()
     {
         Destroy(this.gameObject);
+    }
+    public void appearVictoryPanel()
+    {
+        VictoryPanel.SetActive(true);
     }
 }
