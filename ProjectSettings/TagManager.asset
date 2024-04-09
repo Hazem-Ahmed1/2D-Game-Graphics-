@@ -26,6 +26,8 @@ TagManager:
   - treasure
   - BulletParentPlayer
   - BulletParentPlayer2
+  - Lava
+  - ArrowParent
   layers:
   - Default
   - TransparentFX
@@ -42,8 +44,8 @@ TagManager:
   - wall
   - Player
   - Arrow
-  - 
-  - 
+  - Fire_Shoot
+  - Player_Bullet
   - 
   - 
   - 

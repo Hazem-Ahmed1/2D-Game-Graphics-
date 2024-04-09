@@ -9,7 +9,7 @@ public class HealthBarBoss : MonoBehaviour
     public static Image healthBar;
     public static float Health;
     public static bool Boss_heal = true;
-    public static float max_Health = 100f;
+    public static float max_Health = 300f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +17,6 @@ public class HealthBarBoss : MonoBehaviour
         animator = GetComponent<Animator>();
         healthBar = GetComponent<Image>();
         Health = max_Health;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
     public static void TakeDamage(float damage)
     {

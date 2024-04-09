@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d2144236dc66ed42bff360ee61fbb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7
   StandTime: 5
-  attackRange: 3
+  attackRange: 8
   LongShot: 5

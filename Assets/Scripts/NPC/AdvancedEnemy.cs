@@ -40,7 +40,8 @@ public class AdvancedEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         ChooseColider = this.transform.Find("AttackPoint").gameObject;
         Circle = ChooseColider.GetComponent<CircleCollider2D>();
-        Physics2D.IgnoreLayerCollision(7,7);
+        Physics2D.IgnoreLayerCollision(11,11);
+        Physics2D.IgnoreLayerCollision(10,10);
         Circle.enabled = false;
     }
 

@@ -42,10 +42,11 @@ public class EnemyLongShot : MonoBehaviour
         item = RandoItem(items);
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        ArrowPoint = GameObject.FindWithTag("bulletparent").gameObject;
+        ArrowPoint = GameObject.FindWithTag("ArrowParent").gameObject;
         ChooseColider = this.transform.Find("AttackPoint").gameObject;
         Circle = ChooseColider.GetComponent<CircleCollider2D>();
-        Physics2D.IgnoreLayerCollision(7,7);
+        Physics2D.IgnoreLayerCollision(11,11);
+        Physics2D.IgnoreLayerCollision(10,10);
         speed = 1;
         Circle.enabled = false;
     }
@@ -53,7 +54,7 @@ public class EnemyLongShot : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-       if (Player != null) 
+        if (Player != null) 
         {
             float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
             if (distanceFromPlayer <= RunRange && distanceFromPlayer >= attackRange)
@@ -81,7 +82,6 @@ public class EnemyLongShot : MonoBehaviour
         }
         else if(distanceFromPlayer <= RunRange && distanceFromPlayer > attackRange && EnemyHealth > 0)// && Player.position.x > this.transform.position.x
         {
-            // LookAtPlayer();
             state = MovementState.running;
             Circle.enabled = false;
         }
