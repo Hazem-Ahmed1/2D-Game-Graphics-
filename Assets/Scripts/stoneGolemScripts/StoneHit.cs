@@ -3,21 +3,20 @@ using UnityEngine;
 public class StoneHit : MonoBehaviour
 {
     public GameObject impact;
-    void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            Effect();
+            Destroy(this.gameObject);
             Player player = collision.gameObject.GetComponent<Player>();
-            player.TakeDamage(15);  
+            player.TakeDamage(15);
         }
-        else if(collision.gameObject.CompareTag("StoneGolem"))
+        else if(collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("oneWayPlatform"))
         {
-            StoneNPC stone = collision.gameObject.GetComponent<StoneNPC>();
-            stone.BossTakeDamage(15);
+            Effect();
+            Destroy(gameObject);
         }
-        Effect();
-        Destroy(gameObject);
-            
     }
 
     private void Effect()

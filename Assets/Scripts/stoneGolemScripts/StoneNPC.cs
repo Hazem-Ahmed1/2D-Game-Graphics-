@@ -25,10 +25,24 @@ public class StoneNPC : NPC
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    void update(){
-        if (Input.GetKeyDown(KeyCode.Space))
+    // void Update(){
+    //     if (Input.GetKeyDown(KeyCode.Space))
+    //     {
+    //         BossTakeDamage(15);
+    //     }
+    // }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player_Sowrd"))
         {
+            // Effect();
+            // Destroy(this.gameObject);
+            // Player player = collision.gameObject.GetComponent<Player>();
             BossTakeDamage(15);
+        }
+        else if(collision.gameObject.CompareTag("Player_Bullet"))
+        {
+            BossTakeDamage(5);
         }
     }
     public void shoot()

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7449764476439385920}
   m_Layer: 0
   m_Name: arm_projectile
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   track: 0.2
-  speed: 17
+  speed: 25
   rb: {fileID: 6511037248097481340}
   damage: 20
