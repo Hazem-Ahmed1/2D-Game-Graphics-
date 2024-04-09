@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6943915315578631942}
   - component: {fileID: 6560599789859051622}
   - component: {fileID: 6425670101255393677}
-  m_Layer: 11
+  m_Layer: 15
   m_Name: Boss_fire_ball
-  m_TagString: Untagged
+  m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.344278, y: -9.22, z: 0}
-  m_LocalScale: {x: 1.0462, y: 1.2281, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 513358109
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2054830620, guid: 59a5c85320caec54b9caee8fe96b237c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

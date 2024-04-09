@@ -34,7 +34,8 @@ public class Enemies : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(7,8);
+        Physics2D.IgnoreLayerCollision(11,11);
+        Physics2D.IgnoreLayerCollision(10,10);
     }
 
     // Update is called once per frame

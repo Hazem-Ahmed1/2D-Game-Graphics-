@@ -19,12 +19,14 @@ public class BulletShot : MonoBehaviour
         LookAtPlayer();
         Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed_Bullet;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        Physics2D.IgnoreLayerCollision(11, 11);
+        Physics2D.IgnoreLayerCollision(15, 11);
+        Physics2D.IgnoreLayerCollision(15, 6);
+        Physics2D.IgnoreLayerCollision(15, 16);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-            Instantiate(Fire_Spark, this.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+        Instantiate(Fire_Spark, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
 
     }
     public void LookAtPlayer()
