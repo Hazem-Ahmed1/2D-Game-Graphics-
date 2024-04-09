@@ -5,27 +5,21 @@ using UnityEngine;
 public class walkingWorm : MonoBehaviour
 {
 
- New-NPC
-    public float moveSpeed = 5f; // Adjust the speed as needed
-
-
-
     public float moveSpeed = 5f; // Adjust the speed as needed
     public float groundRange = 8f; // Range of movement on the ground
     [SerializeField] private LayerMask groundLayer;
- main
+ 
     private Rigidbody2D body;
     public Animator anim;
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private float horizontalInput;
     private bool isFacingRight = true; //default
- New-NPC
     public float lineOfSite = 3;
     public Transform startPoint;
     public Transform endPoint;
 
- main
+
 
     private void Awake()
     {
@@ -59,7 +53,7 @@ public class walkingWorm : MonoBehaviour
 
     void CheckFlip()
     {
- New-NPC
+
 
         float distanceFromStartPoint = Vector2.Distance(startPoint.position, this.transform.position);
         float distanceFromEndPoint = Vector2.Distance(endPoint.position, this.transform.position);
@@ -84,30 +78,16 @@ public class walkingWorm : MonoBehaviour
     }
 
 
-        // Get the position of the character
-        Vector2 currentPosition = transform.position;
-
-        // Check if the character is reaching the edge of the ground range
-        if (currentPosition.x >= groundRange && isFacingRight || currentPosition.x <= -groundRange && !isFacingRight)
-        {
-            // Flip the character
-            FlipCharacter();
-        }
-    }
- main
-
     void FlipCharacter()
     {
         // Flip the character horizontally
         isFacingRight = !isFacingRight;
- New-NPC
 
         Vector3 myScale = this.transform.localScale;
         myScale.x *= -1;
         this.transform.localScale = myScale;
 
         spriteRenderer.flipX = !spriteRenderer.flipX;
- main
     }
 
 
