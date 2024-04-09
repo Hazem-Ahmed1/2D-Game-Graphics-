@@ -6,8 +6,8 @@ public class MC_AttackController : MonoBehaviour
     private float lastAttackTime;
     private int comboCount;
     private Animator animator;
-    public AudioSource audioSource;
-    public AudioClip Pistol,Sword;
+    //public AudioSource audioSource;
+    //public AudioClip Pistol,Sword;
 
     void Start()
     {
@@ -20,8 +20,8 @@ public class MC_AttackController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            audioSource.clip = Sword;
-            audioSource.Play();
+            //audioSource.clip = Sword;
+            //audioSource.Play();
             float timeSinceLastAttack = Time.time - lastAttackTime;
 
             if (timeSinceLastAttack > comboTime)
@@ -35,7 +35,7 @@ public class MC_AttackController : MonoBehaviour
             if (comboCount % 2 == 1)
             {
                 animator.SetTrigger("Attack1");
-                audioSource.Play();
+                //audioSource.Play();
             }
             else
             {
@@ -49,8 +49,8 @@ public class MC_AttackController : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            audioSource.clip = Pistol;
-            audioSource.Play();
+            //audioSource.clip = Pistol;
+            //audioSource.Play();
             animator.SetTrigger("isShoot");
         }
     }

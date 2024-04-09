@@ -31,6 +31,7 @@ public class EnemyLongShot : MonoBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D Circle;
     private GameObject ChooseColider;
+
     private enum MovementState {idle, running, attack,SpecialAttack}
     MovementState state = MovementState.idle;
     public bool isFlipped = false;
@@ -42,7 +43,6 @@ public class EnemyLongShot : MonoBehaviour
         item = RandoItem(items);
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        ArrowPoint = GameObject.FindWithTag("ArrowParent").gameObject;
         ChooseColider = this.transform.Find("AttackPoint").gameObject;
         Circle = ChooseColider.GetComponent<CircleCollider2D>();
         Physics2D.IgnoreLayerCollision(11,11);

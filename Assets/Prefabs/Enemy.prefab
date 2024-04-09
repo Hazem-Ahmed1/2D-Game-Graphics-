@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6037904705054350597}
   - component: {fileID: 4212783940847884983}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: damage
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6077768521817075395}
   - component: {fileID: 6418794688132101118}
   - component: {fileID: 2926596491828985062}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f436d0a99760d3e4facddc5f1f416a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.66
-  lineOfSite: 5
+  speed: 4
+  lineOfSite: 9.16
   attackRange: 2.91
   EnemyHealth: 10
   Player: {fileID: 0}

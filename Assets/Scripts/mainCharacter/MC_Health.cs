@@ -14,8 +14,8 @@ public class MC_Health : MonoBehaviour
     [SerializeField] GameObject Bloodvfx;
     [SerializeField] Transform bloodPos;
     [SerializeField] MC_HealthBar healthBar;
-    public AudioSource audioSource;
-    public AudioClip hurt,death;
+    // public AudioSource audioSource;
+    // public AudioClip hurt,death;
     void Start()
     {
         MC_health = maxHealth;
@@ -70,8 +70,8 @@ public class MC_Health : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        audioSource.clip = hurt;
-        audioSource.Play();
+        // audioSource.clip = hurt;
+        // audioSource.Play();
         MC_health -= damage;
         healthBar.UpdateHealthBar(MC_health, maxHealth);
         var blood = Instantiate(Bloodvfx,bloodPos.transform.position, Quaternion.identity);
@@ -87,8 +87,8 @@ public class MC_Health : MonoBehaviour
         isStatic = true;
         animator.SetTrigger("isDead");
         rb.bodyType = RigidbodyType2D.Static;
-        audioSource.clip = death;
-        audioSource.Play();
+        //audioSource.clip = death;
+        //audioSource.Play();
     }
     public void MC_Destroy()
     {

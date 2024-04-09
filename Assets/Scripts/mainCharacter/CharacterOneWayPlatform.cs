@@ -7,8 +7,8 @@ public class CharacterOneWayPlatform : MonoBehaviour
 {
     private GameObject currentOneWayPlatform;
     [SerializeField] private BoxCollider2D playerCollider;
-    public AudioSource audioSource;
-    public AudioClip Dash;
+   // public AudioSource audioSource;
+    //public AudioClip Dash;
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)){
@@ -17,8 +17,8 @@ public class CharacterOneWayPlatform : MonoBehaviour
             }
         }
         if(Input.GetKeyDown(KeyCode.LeftShift)){
-            audioSource.clip = Dash;
-            audioSource.Play();
+            //audioSource.clip = Dash;
+            //audioSource.Play();
             StartCoroutine(DisableCollisionWithDash());
         }
     }
