@@ -6,9 +6,7 @@ public class walkingWorm : MonoBehaviour
 {
 
     public float moveSpeed = 5f; // Adjust the speed as needed
-    public float groundRange = 8f; // Range of movement on the ground
     [SerializeField] private LayerMask groundLayer;
- 
     private Rigidbody2D body;
     public Animator anim;
     private BoxCollider2D boxCollider;
@@ -87,7 +85,6 @@ public class walkingWorm : MonoBehaviour
         myScale.x *= -1;
         this.transform.localScale = myScale;
 
-        spriteRenderer.flipX = !spriteRenderer.flipX;
     }
 
 
