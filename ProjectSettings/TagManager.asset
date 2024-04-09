@@ -15,28 +15,17 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
- New-NPC
-Updated upstream
- main
-  - NPC_EvilBoss
-  - BloodNPC
   - damage
-  - Player_Bullet
+  - Coin
+  - BloodNPC
   - Player_Sowrd
   - Arrow
   - gems
-  - Coin
+  - Player_Bullet
+  - ArrowParent
   - treasure
-  - BulletParentPlayer
-  - BulletParentPlayer2
- New-NPC
   - startpoint
   - endPoint
-Stashed changes
-  - Lava
-  - ArrowParent
-  - LightingPoint
- main
   layers:
   - Default
   - TransparentFX
@@ -45,16 +34,16 @@ Stashed changes
   - Water
   - UI
   - Ground
-  - stoneBoss
   - 
   - 
-  - Enemy
-  - EvilBoss
-  - wall
-  - Player
-  - Arrow
-  - Fire_Shoot
-  - Player_Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -73,25 +62,4 @@ Stashed changes
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1031756941
-    locked: 0
-  - name: clouds
-    uniqueID: 1684548105
-    locked: 0
-  - name: decorations
-    uniqueID: 2442268441
-    locked: 0
-  - name: platformer
-    uniqueID: 3600227451
-    locked: 0
-  - name: objects
-    uniqueID: 513358109
-    locked: 0
-  - name: player
-    uniqueID: 1249800199
-    locked: 0
-  - name: grass
-    uniqueID: 3959359817
     locked: 0
