@@ -28,6 +28,7 @@ TagManager:
   - BulletParentPlayer2
   - Lava
   - ArrowParent
+  - LightingPoint
   layers:
   - Default
   - TransparentFX

@@ -11,37 +11,37 @@ public class GuideFire : MonoBehaviour
     private float lineOfSite;
     Rigidbody2D rb;
     private SpriteRenderer sr;
-    private Transform Player;
     private Animator anim;
+    private Transform Target;
     private enum MovementState {idle, walk}
     MovementState state = MovementState.idle;
     // Start is called before the first frame update
     private void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("LightingPoint").transform;
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         lineOfSite = 2f;
-        speed = 2;
+
     }
     private void Update()
     {
-        float distanceFromPlayer = Vector2.Distance(Player.position, this.transform.position);
+        float distanceFromPlayer = Vector2.Distance(Target.position, this.transform.position);
         if(distanceFromPlayer > lineOfSite)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, Player.position, speed* Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, Target.position, speed* Time.deltaTime);
         }
         UpdateAnimationState(distanceFromPlayer);
     }
     private void UpdateAnimationState(float distanceFromPlayer)
     {
-        if(Player.position.x > this.transform.position.x && distanceFromPlayer > lineOfSite)
+        if(Target.position.x > this.transform.position.x && distanceFromPlayer > lineOfSite)
         {
             state = MovementState.walk;
             sr.flipX = false;
         }
-        else if(Player.position.x < this.transform.position.x && distanceFromPlayer > lineOfSite)
+        else if(Target.position.x < this.transform.position.x && distanceFromPlayer > lineOfSite)
         {
             state = MovementState.walk;
             sr.flipX = true;

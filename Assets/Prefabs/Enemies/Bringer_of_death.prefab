@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2996490560656364240}
   - component: {fileID: 3942619377948268572}
   - component: {fileID: 8601459487550596285}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Bringer_of_death
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.25, y: 2.62, z: 0.039763477}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4940719365354854966}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 513358109
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c0ff133ed44008344a686546aabf5da4, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4940719365354854966}
   - component: {fileID: 2537210863678697427}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: damage
   m_Icon: {fileID: 0}

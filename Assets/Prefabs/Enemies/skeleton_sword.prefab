@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3126475848383116198}
   - component: {fileID: 2076406199433944417}
   - component: {fileID: 6248694136397656262}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: skeleton_sword
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450960585918193708}
   - component: {fileID: 7263280779341945164}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: damage
   m_Icon: {fileID: 0}

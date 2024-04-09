@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class MageShootingPlayer : MonoBehaviour //not used yet
 {
-    private Transform player;
+    [SerializeField] private Transform player;
     private bool grounded;
     public float lineOfSite;
     //mageMovement mageMovement;
     public Animator anim;
-    private BoxCollider2D boxCollider;
+    public bool Charged = false;
 
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("player").transform;
         anim =  GetComponent<Animator>();
     }
     
@@ -35,6 +34,7 @@ public class MageShootingPlayer : MonoBehaviour //not used yet
         if (distanceFromThePlayer < lineOfSite)
         {
            anim.SetTrigger("light-charge");
+           Charged = true;
         }
     }
 
