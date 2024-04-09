@@ -2,6 +2,8 @@
     "files.exclude": {
         "**/.DS_Store": true,
         "**/.git": true,
+        "**/.vs": true,
+        "**/.vsconfig": true,
         "**/.gitmodules": true,
         "**/*.booproj": true,
         "**/*.pidb": true,
@@ -47,10 +49,13 @@
         "library/": true,
         "obj/": true,
         "Obj/": true,
+        "Logs/": true,
+        "logs/": true,
         "ProjectSettings/": true,
+        "UserSettings/": true,
         "temp/": true,
-        "Temp/": true
+        "Temp/": true,
+        "dotnet.preferCSharpExtension": true
     },
-    "dotnet.preferCSharpExtension": true,
     "dotnet.defaultSolution": "2D-Game-Graphics-.sln"
 }

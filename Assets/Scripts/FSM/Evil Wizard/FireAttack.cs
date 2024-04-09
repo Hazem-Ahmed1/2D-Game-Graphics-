@@ -7,7 +7,7 @@ public class FireAttack : StateMachineBehaviour
     
     public GameObject bullet;
     public GameObject BulletParent;
-    public float fireRate = 1;
+    private float fireRate = 0.5f;
     private float nextFireTime;
     BossController bossmove;
     private Rigidbody2D rb;
@@ -26,12 +26,9 @@ public class FireAttack : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
-        {
-            animator.SetTrigger("Attack");
-        }
 
-        else if (nextFireTime < Time.time && Vector2.Distance(player.position, rb.position) > attackRange)
+
+        if (nextFireTime < Time.time)
         {
             Instantiate(bullet, BulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + fireRate;
@@ -43,6 +40,7 @@ public class FireAttack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        this.rb.bodyType = RigidbodyType2D.Static;
     }
 
 

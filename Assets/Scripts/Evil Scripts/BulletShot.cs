@@ -5,9 +5,9 @@ using UnityEngine;
 public class BulletShot : MonoBehaviour
 {
     GameObject target;
-    public float speed = 10;
+    public GameObject Fire_Spark;
+    private float speed_Bullet = 20;
     Rigidbody2D bulletRB;
-    BossController bossmove;
     public bool isFlipped = false;
 
 
@@ -15,19 +15,18 @@ public class BulletShot : MonoBehaviour
     void Start()
     {
         bulletRB = GetComponent<Rigidbody2D>();
-        bossmove = GetComponent<BossController>();
         target = GameObject.FindGameObjectWithTag("Player");
-        Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed;
+        LookAtPlayer();
+        Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed_Bullet;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-
+        Physics2D.IgnoreLayerCollision(15, 11);
+        Physics2D.IgnoreLayerCollision(15, 6);
+        Physics2D.IgnoreLayerCollision(15, 16);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Destroy(this.gameObject);
-
-        }
+        Instantiate(Fire_Spark, this.transform.position, Quaternion.identity);
+        Destroy(this.gameObject);
 
     }
     public void LookAtPlayer()
@@ -47,11 +46,5 @@ public class BulletShot : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = false;
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        LookAtPlayer();
-
     }
 }

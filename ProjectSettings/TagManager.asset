@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
+  - StoneGolem
   - pip
   - Enemy
   - oneWayPlatform
@@ -13,7 +15,9 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
+ New-NPC
 Updated upstream
+ main
   - NPC_EvilBoss
   - BloodNPC
   - damage
@@ -25,27 +29,32 @@ Updated upstream
   - treasure
   - BulletParentPlayer
   - BulletParentPlayer2
+ New-NPC
   - startpoint
   - endPoint
 Stashed changes
+  - Lava
+  - ArrowParent
+  - LightingPoint
+ main
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - ground
+  - 
   - Water
   - UI
-  - Wall
   - Ground
+  - stoneBoss
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - EvilBoss
+  - wall
+  - Player
+  - Arrow
+  - Fire_Shoot
+  - Player_Bullet
   - 
   - 
   - 

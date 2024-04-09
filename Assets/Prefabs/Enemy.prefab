@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6037904705054350597}
   - component: {fileID: 4212783940847884983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackPoint
-  m_TagString: Untagged
+  m_TagString: damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 6077768521817075395}
   - component: {fileID: 6418794688132101118}
   - component: {fileID: 2926596491828985062}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6037904705054350597}
@@ -152,8 +152,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1249800199
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 052c0921dd94b9240bf7cf28ecc5e452, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -271,8 +271,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f436d0a99760d3e4facddc5f1f416a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.66
-  lineOfSite: 5
+  speed: 4
+  lineOfSite: 9.16
   attackRange: 2.91
   EnemyHealth: 10
   Player: {fileID: 0}
+  items:
+  - {fileID: 1917670769949428337, guid: 0d521209e6abd374fabf2562da5027a9, type: 3}
+  - {fileID: 4504582174303729865, guid: e61699150eed9154680e8693cf4bb0a1, type: 3}
+  - {fileID: 3093694154230658678, guid: 25dd1834578114d4db42233c8c8d6970, type: 3}
+  - {fileID: 5558283519799879582, guid: dd351bb9a2bb4d246b875371e00e6b4d, type: 3}
+  - {fileID: 643095949871958010, guid: 6d94b123fc5c5c242bad4efc56c6764a, type: 3}
+  - {fileID: 1892540993585444586, guid: 013313c798a4a704da4c803ee1266860, type: 3}
+  - {fileID: 220841869680253240, guid: cae3fa976df138f478a11fba41f74225, type: 3}
