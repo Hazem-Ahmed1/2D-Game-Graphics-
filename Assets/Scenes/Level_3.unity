@@ -1491,10 +1491,10 @@ RectTransform:
   - {fileID: 317162631}
   m_Father: {fileID: 1036150818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 626, y: 596.38}
-  m_SizeDelta: {x: 841.7, y: 21.1555}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.21002197, y: -75}
+  m_SizeDelta: {x: 841.69995, y: 21.155518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &248622449
 MonoBehaviour:
@@ -2904,9 +2904,6 @@ MonoBehaviour:
   Bloodvfx: {fileID: 7876763874524792412, guid: 34029c67ec854c54599a706c796f2481, type: 3}
   bloodPos: {fileID: 514231370}
   healthBar: {fileID: 1213949209}
-  audioSource: {fileID: 641049092}
-  hurt: {fileID: 8300000, guid: 41b8745ebed02954ea2227e1304752bf, type: 3}
-  death: {fileID: 8300000, guid: b121cd5c589696e43a7bb57846e1eee8, type: 3}
 --- !u!114 &786489068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,9 +2917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboTime: 1
-  audioSource: {fileID: 641049092}
-  Pistol: {fileID: 8300000, guid: af1db4ecef841e546b26e823e9143ca6, type: 3}
-  Sword: {fileID: 8300000, guid: 818d3a80f9f55584f8f00be6443f2d42, type: 3}
 --- !u!96 &786489069
 TrailRenderer:
   serializedVersion: 3
@@ -3040,8 +3034,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 786489073}
-  audioSource: {fileID: 641049092}
-  Dash: {fileID: 8300000, guid: 680e14e5d72806a418b0455a70f4274b, type: 3}
 --- !u!114 &786489071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,8 +4023,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -131, y: -59}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0013427734, y: -0.0010070801}
+  m_SizeDelta: {x: 505.9299, y: 248.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1036150819
 MonoBehaviour:

@@ -524,8 +524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -29, y: -33.75}
-  m_SizeDelta: {x: 395, y: 20.5}
+  m_AnchoredPosition: {x: -12.437, y: -33.75}
+  m_SizeDelta: {x: 870.81, y: 20.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181802975
 MonoBehaviour:
@@ -3402,7 +3402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &901353242
@@ -4196,8 +4196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -131, y: -59}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0013427734, y: -0.0010070801}
+  m_SizeDelta: {x: 505.9299, y: 248.35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129570992
 MonoBehaviour:
@@ -7273,8 +7273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -29, y: -36}
-  m_SizeDelta: {x: 400, y: 25}
+  m_AnchoredPosition: {x: -12.435, y: -36}
+  m_SizeDelta: {x: 870.81, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1584952788
 MonoBehaviour:
@@ -8899,8 +8899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -29, y: -33.75}
-  m_SizeDelta: {x: 395, y: 20.5}
+  m_AnchoredPosition: {x: -12.4368, y: -33.75}
+  m_SizeDelta: {x: 870.8143, y: 20.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914412804
 MonoBehaviour:
@@ -9261,8 +9261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 4343729094327178990}
-  audioSource: {fileID: 864734769}
-  Dash: {fileID: 8300000, guid: 680e14e5d72806a418b0455a70f4274b, type: 3}
 --- !u!4 &1557581403194747028
 Transform:
   m_ObjectHideFlags: 0
@@ -9361,9 +9359,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboTime: 1
-  audioSource: {fileID: 864734769}
-  Pistol: {fileID: 8300000, guid: af1db4ecef841e546b26e823e9143ca6, type: 3}
-  Sword: {fileID: 8300000, guid: 818d3a80f9f55584f8f00be6443f2d42, type: 3}
 --- !u!1 &2893736181561828815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9549,9 +9544,6 @@ MonoBehaviour:
   Bloodvfx: {fileID: 7876763874524792412, guid: 34029c67ec854c54599a706c796f2481, type: 3}
   bloodPos: {fileID: 1557581403194747028}
   healthBar: {fileID: 2125038785}
-  audioSource: {fileID: 864734769}
-  hurt: {fileID: 8300000, guid: 41b8745ebed02954ea2227e1304752bf, type: 3}
-  death: {fileID: 8300000, guid: b121cd5c589696e43a7bb57846e1eee8, type: 3}
 --- !u!4 &6572747780659754304
 Transform:
   m_ObjectHideFlags: 0
