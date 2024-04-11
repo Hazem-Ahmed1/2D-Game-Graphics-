@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MageShootingPlayer : MonoBehaviour //not used yet
 {
-    [SerializeField] private Transform player;
+    Transform player;
     private bool grounded;
     public float lineOfSite;
     //mageMovement mageMovement;
@@ -15,6 +15,7 @@ public class MageShootingPlayer : MonoBehaviour //not used yet
     private void Start()
     {
         anim =  GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
     

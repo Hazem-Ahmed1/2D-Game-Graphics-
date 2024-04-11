@@ -8,15 +8,19 @@ public class StoneNPC : NPC
     public LineRenderer lineRenderer;
     public HealthBar healthBar;
     public LayerMask laserHitLayers;
+    public GameObject VictoryPanel;
+    [SerializeField] AudioSource takeDmg;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        currHealth = attributes.healthPoints;
-        healthBar.SetMaxHealth(currHealth);
+        Transform player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (attributes != null)
+        {
+            currHealth = attributes.healthPoints;
+            healthBar.SetMaxHealth(currHealth);
+        }
     }
 
     void FixedUpdate()
@@ -25,19 +29,11 @@ public class StoneNPC : NPC
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    // void Update(){
-    //     if (Input.GetKeyDown(KeyCode.Space))
-    //     {
-    //         BossTakeDamage(15);
-    //     }
-    // }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player_Sowrd"))
         {
-            // Effect();
-            // Destroy(this.gameObject);
-            // Player player = collision.gameObject.GetComponent<Player>();
             BossTakeDamage(15);
         }
         else if(collision.gameObject.CompareTag("Player_Bullet"))
@@ -58,8 +54,13 @@ public class StoneNPC : NPC
             if (currHealth <= 0)
             {
                 Die();
+                appearVictoryPanel();
             }
         }
+    }
+    public void appearVictoryPanel()
+    {
+        VictoryPanel.SetActive(true);
     }
 
 }

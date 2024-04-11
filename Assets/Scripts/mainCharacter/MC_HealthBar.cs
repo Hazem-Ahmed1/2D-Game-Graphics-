@@ -12,7 +12,6 @@ public class MC_HealthBar : MonoBehaviour
     public void UpdateHealthBar(float currentValue , float maxValue)
     {
         slider.value = currentValue / maxValue;
-
         if (currentValue <= 0)
         {
             filed.SetActive(false);

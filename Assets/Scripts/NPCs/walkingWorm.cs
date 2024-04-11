@@ -5,88 +5,45 @@ using UnityEngine;
 public class walkingWorm : MonoBehaviour
 {
 
-    public float moveSpeed = 5f; // Adjust the speed as needed
-    [SerializeField] private LayerMask groundLayer;
-    private Rigidbody2D body;
-    public Animator anim;
-    private BoxCollider2D boxCollider;
-    private SpriteRenderer spriteRenderer;
-    private float horizontalInput;
-    private bool isFacingRight = true; //default
-    public float lineOfSite = 3;
+
     public Transform startPoint;
     public Transform endPoint;
+    private float speed = 5f;
+    private bool facingRight = true;
+    Animator animator;
 
+    private Transform targetPoint; // Current target point
 
-
-    private void Awake()
+    private void Start()
     {
-        //Grab references for rigidbody and animator from object
-        body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        boxCollider = GetComponent<BoxCollider2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        startPoint = GameObject.FindGameObjectWithTag("startPoint").transform;
-        endPoint = GameObject.FindGameObjectWithTag("endPoint").transform;
+        animator = GetComponent<Animator>();
+        // Set the initial target point to startPoint
+        targetPoint = startPoint;
     }
 
-    void Update()
+    private void Update()
     {
-        //default that the worm is to walk 
-        anim.SetBool("walkWorm", true);
+        animator.SetBool("walkWorm", true);
+        // Move towards the target point
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, speed * Time.deltaTime);
 
-        // Move the character
-        MoveCharacter();
-
-        // Check if the character needs to flip
-        CheckFlip();
-    }
-
-    void MoveCharacter()
-    {
-        // Move the character horizontally
-        float horizontalInput = isFacingRight ? 1f : -1f;
-        body.velocity = new Vector2(horizontalInput * moveSpeed, body.velocity.y);
-    }
-
-    void CheckFlip()
-    {
-
-
-        float distanceFromStartPoint = Vector2.Distance(startPoint.position, this.transform.position);
-        float distanceFromEndPoint = Vector2.Distance(endPoint.position, this.transform.position);
-
-
-        if (distanceFromStartPoint <= lineOfSite && isFacingRight == false)
+        // Check if reached the target point
+        if (transform.position == targetPoint.position)
         {
-            FlipCharacter();
-        }
-        else if (distanceFromEndPoint <= lineOfSite && isFacingRight == true)
-        {
+            if (targetPoint == startPoint)
+                targetPoint = endPoint;
+            else
+                targetPoint = startPoint;
+
             FlipCharacter();
         }
     }
 
-
-    private void OnDrawGizmosSelected()
+    private void FlipCharacter()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, lineOfSite);
-
+        facingRight = !facingRight;
+        Vector3 newScale = transform.localScale;
+        newScale.x *= -1;
+        transform.localScale = newScale;
     }
-
-
-    void FlipCharacter()
-    {
-        // Flip the character horizontally
-        isFacingRight = !isFacingRight;
-
-        Vector3 myScale = this.transform.localScale;
-        myScale.x *= -1;
-        this.transform.localScale = myScale;
-
-    }
-
-
 }
-

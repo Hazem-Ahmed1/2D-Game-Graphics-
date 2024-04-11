@@ -9,11 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 8ff2ddecba2a0414db37cd3cabdebe57, type: 3}
   m_Name: StoneAttributes
   m_EditorClassIdentifier: Assembly-CSharp::NPCAttributes
-  healthPoints: 500
-  lookRange: 15
-  atkRange: 50
-  speed: 2
-  damage: 20
+  NPCS1: {fileID: 0}
+  NPCS2: {fileID: 0}
+  NPCS3: {fileID: 0}
+  NPCS4: {fileID: 0}
+  Clone: 1
+  fireRate: 1
+  player: {fileID: 0}
+  isFlipped: 0
+  DamageSowrd: 10
+  DamageBullet: 2
+  audioSource: {fileID: 0}
+  laugh: {fileID: 0}
+  death: {fileID: 0}
+  hurt: {fileID: 0}
+  fire: {fileID: 0}
+  VictoryPanel: {fileID: 0}

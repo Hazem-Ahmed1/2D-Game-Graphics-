@@ -48,6 +48,14 @@ public class Main_Character : MonoBehaviour
     [SerializeField] private GameObject BulletParent2;
     public static bool isFlied;
     public static bool EndRunning = false;
+    public GameObject LosePanel;
+    public GameObject VictoryPanel;
+
+    [SerializeField] AudioSource dashSound;
+    [SerializeField] AudioSource jumpSound;
+    [SerializeField] AudioSource pistol;
+
+
 
 
     // Start method is called once before the first frame update
@@ -71,6 +79,7 @@ public class Main_Character : MonoBehaviour
         Move();
         CheckDirection();
         UpdateAnimation();
+
     }
 
     private void CheckInput()
@@ -148,6 +157,7 @@ public class Main_Character : MonoBehaviour
     private void Jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpForce);
+        jumpSound.Play();
     }
     private bool isGrounded()
     {
@@ -166,6 +176,7 @@ public class Main_Character : MonoBehaviour
         }
         else
         {
+
             isWallSliding = false;
         }
     }
@@ -191,6 +202,7 @@ public class Main_Character : MonoBehaviour
         tr.emitting = true;
         tr.startColor = Color.clear;
         tr.endColor = Color.clear;
+        dashSound.Play();
         yield return new WaitForSeconds(DashingCoolDown);
         tr.emitting = false;
         body.gravityScale = originalGravity;
@@ -211,13 +223,24 @@ public class Main_Character : MonoBehaviour
     {
         Instantiate(Bullet, BulletParent1.transform.position, Quaternion.identity);
         Instantiate(Bullet, BulletParent2.transform.position, Quaternion.identity);
+        pistol.Play();
+    }
+    public void appearLosePanel()
+    {
+        Time.timeScale = 0;
+        LosePanel.SetActive(true);
+    }
+    private void appearVictoryPanel()
+    {
+        
+        VictoryPanel.SetActive(true);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal_Point"))
+        {
+            appearVictoryPanel();
+        }
     }
 
 }
-// Bugs
-// --FIXED  Jumping while touching wall is so high (isTouchingWall & isGround & canJump)
-// He can't jump while standing on a wall 
-// --FIXED When it's (isTouchingWall & !isGround & !isWallSliding) it jumps 
-// --FIXED Dashing animation while flying dosen't work
-// Only the first frame of dashing appears
-// --FIXED Error in the blind tree animations 

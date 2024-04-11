@@ -15,17 +15,22 @@ TagManager:
   - bullet
   - Bullet
   - Spikes
-  - damage
-  - Coin
+  - NPC_EvilBoss
   - BloodNPC
+  - damage
+  - Player_Bullet
   - Player_Sowrd
   - Arrow
   - gems
-  - Player_Bullet
-  - ArrowParent
+  - Coin
   - treasure
-  - startpoint
-  - endPoint
+  - BulletParentPlayer
+  - BulletParentPlayer2
+  - Lava
+  - ArrowParent
+  - LightingPoint
+  - Portal_Point
+  - health
   layers:
   - Default
   - TransparentFX
@@ -34,16 +39,16 @@ TagManager:
   - Water
   - UI
   - Ground
+  - stoneBoss
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - EvilBoss
+  - wall
+  - Player
+  - Arrow
+  - Fire_Shoot
+  - Player_Bullet
   - 
   - 
   - 
@@ -62,4 +67,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1031756941
+    locked: 0
+  - name: clouds
+    uniqueID: 1684548105
+    locked: 0
+  - name: decorations
+    uniqueID: 2442268441
+    locked: 0
+  - name: platformer
+    uniqueID: 3600227451
+    locked: 0
+  - name: objects
+    uniqueID: 513358109
+    locked: 0
+  - name: player
+    uniqueID: 1249800199
+    locked: 0
+  - name: grass
+    uniqueID: 3959359817
     locked: 0

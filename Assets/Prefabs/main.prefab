@@ -361,6 +361,11 @@ MonoBehaviour:
   Bullet: {fileID: 3297447176288272274, guid: a58b9b6165cbf524db95913111ee70da, type: 3}
   BulletParent1: {fileID: 1599852588848670681}
   BulletParent2: {fileID: 5783160321569898955}
+  LosePanel: {fileID: 0}
+  VictoryPanel: {fileID: 0}
+  dashSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  pistol: {fileID: 0}
 --- !u!114 &325185021183614569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,6 +496,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboTime: 1
+  Sword1: {fileID: 0}
+  Sword2: {fileID: 0}
 --- !u!114 &5940063129979692720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +516,9 @@ MonoBehaviour:
   Bloodvfx: {fileID: 7876763874524792412, guid: 34029c67ec854c54599a706c796f2481, type: 3}
   bloodPos: {fileID: 1557581403036891816}
   healthBar: {fileID: 0}
+  deathSound: {fileID: 0}
+  hitSound: {fileID: 0}
+  health: 10
 --- !u!114 &8175264651001409850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,7 +546,7 @@ GameObject:
   - component: {fileID: 2821905617887251848}
   m_Layer: 13
   m_Name: LightingPoint
-  m_TagString: Untagged
+  m_TagString: LightingPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

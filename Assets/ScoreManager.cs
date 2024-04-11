@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-
+    [SerializeField] TextMeshProUGUI textMeshProUGUI;
     private int score = 0;
 
     public int Score
@@ -19,7 +20,7 @@ public class ScoreManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            // DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -31,7 +32,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(score);
+        textMeshProUGUI.text = score.ToString();
     }
     public void IncrementScore(int amount)
     {
