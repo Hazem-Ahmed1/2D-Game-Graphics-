@@ -38,7 +38,7 @@ public class NPC : MonoBehaviour
 
     protected void BasicMovement()
     {
-        if(isDead || isHurt) return;
+        if(isDead || isHurt || attributes == null) return;
 
         LookAtPlayer();
         float distanceToPlayer = Vector2.Distance(player.transform.position, rb.position);
@@ -47,7 +47,7 @@ public class NPC : MonoBehaviour
         {
             ChangeAnimationState(NPC_ATTACK_1);
             isAttacking = true;
-            player.GetComponent<Player>().TakeDamage(attributes.damage);
+            player.GetComponent<MC_Health>().TakeDamage(20);
 
             Invoke("AttackDone", animator.GetCurrentAnimatorStateInfo(0).length);
         }
@@ -60,12 +60,14 @@ public class NPC : MonoBehaviour
         {
             ChangeAnimationState(NPC_IDLE);
         }
-
-        if (Input.GetKeyDown(KeyCode.E))
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player_Sowrd"))
         {
             isHurt = true;
             TakeDamage(30);
-        }
+        }   
     }
 
     protected void MoveToPlayer()
@@ -86,7 +88,6 @@ public class NPC : MonoBehaviour
     {
         ChangeAnimationState(NPC_HURT);
         currHealth -= damage;
-        Debug.Log("hurt: "+currHealth);
         Invoke("DamageDone", animator.GetCurrentAnimatorStateInfo(0).length);
 
         if(currHealth <= 0)

@@ -9,8 +9,8 @@ public class StoneHit : MonoBehaviour
         {
             Effect();
             Destroy(this.gameObject);
-            Player player = collision.gameObject.GetComponent<Player>();
-            player.TakeDamage(15);
+            MC_Health player = collision.gameObject.GetComponent<MC_Health>();
+            player.TakeDamage(10);
         }
         else if(collision.gameObject.CompareTag("ground") || collision.gameObject.CompareTag("oneWayPlatform"))
         {

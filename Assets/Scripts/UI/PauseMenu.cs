@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameObject Select_Level;
     private bool isPaused = false;
+    private bool isBack = false;
 
     private void Start()
     {
@@ -24,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             if (isPaused)
             {
                 ResumeLevel();
+                Select_Level.SetActive(false);
             }
             else
             {
@@ -47,6 +50,23 @@ public class PauseMenu : MonoBehaviour
             pauseMenuUI.SetActive(false);
         }
     }
+    public void SelectLevel()
+    {
+        // Time.timeScale = 0f;
+        isBack = !isBack;
+
+        if (pauseMenuUI != null && !isBack)
+        {
+            pauseMenuUI.SetActive(false);
+            Select_Level.SetActive(true);
+        }
+        else if(pauseMenuUI != null && isBack)
+        {
+            pauseMenuUI.SetActive(true);
+            Select_Level.SetActive(false);
+        }
+    }
+
 
     public void PauseLevel()
     {

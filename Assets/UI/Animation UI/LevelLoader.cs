@@ -10,13 +10,24 @@ public class LevelLoader : MonoBehaviour
     public void LoadNextLevel()
     {
         this.gameObject.SetActive(true);
-        // StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-        StartCoroutine(LoadLevel(4));
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     public void MainMenuButton()
     {
         this.gameObject.SetActive(true);
-        StartCoroutine(LoadLevel(2));
+        StartCoroutine(LoadLevel(0));
+    }
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        this.gameObject.SetActive(true);
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+    }
+    public void SelectLevel(int index)
+    {
+        this.gameObject.SetActive(true);
+        Time.timeScale = 1f;
+        StartCoroutine(LoadLevel(index));
     }
 
     IEnumerator LoadLevel(int levelIndex)
@@ -27,4 +38,10 @@ public class LevelLoader : MonoBehaviour
         
         SceneManager.LoadScene(levelIndex);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Game Over");
+        Application.Quit();
+    }
 }
