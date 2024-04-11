@@ -346,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   lineOfSite: 9
-  attackRange: 2.69
+  attackRange: 2.29
   EnemyHealth: 10
   Player: {fileID: 0}
   items:
