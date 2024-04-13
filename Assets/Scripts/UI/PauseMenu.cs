@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -10,6 +8,24 @@ public class PauseMenu : MonoBehaviour
     public GameObject Select_Level;
     private bool isPaused = false;
     private bool isBack = false;
+    public PlayerInput playerControls;
+    private InputAction pause;
+
+    void Awake()
+    {
+        playerControls = new PlayerInput();
+    }
+
+    void OnEnable()
+    {
+        pause = playerControls.UI.Pause;
+        pause.Enable();
+    }
+
+    void OnDisable()
+    {
+        pause.Disable();
+    }
 
     private void Start()
     {
@@ -21,7 +37,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pause.IsPressed())
         {
             if (isPaused)
             {

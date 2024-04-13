@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using System;
-
+using UnityEngine.InputSystem;
 
 public class Main_Character : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class Main_Character : MonoBehaviour
 
     private bool isFacingright = true;
     private bool isRunning;
-    private float horizontalInput;
+    private Vector2 moveDirection;
 
     [Header("Ground")]
     [SerializeField] private LayerMask groundLayer;
@@ -56,7 +55,11 @@ public class Main_Character : MonoBehaviour
     [SerializeField] AudioSource pistol;
 
 
+    public PlayerInput playerControls;
 
+    private InputAction move;
+    private InputAction jump;
+    private InputAction dash;
 
     // Start method is called once before the first frame update
     // Awake method executed once when the game starts even if the component wasen't called
@@ -68,6 +71,26 @@ public class Main_Character : MonoBehaviour
         anim = GetComponent<Animator>();
         wallJumpingAngle.Normalize();
         isFlied = false;
+
+        playerControls = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        move = playerControls.Player.Move;
+        jump = playerControls.Player.Jump;
+        dash = playerControls.Player.Dash;
+
+        move.Enable();
+        jump.Enable();
+        dash.Enable();
+    }
+
+    private void OnDisable()
+    {
+        move.Disable();
+        jump.Disable();
+        dash.Disable();
     }
 
     // Update is called once per frame
@@ -89,13 +112,13 @@ public class Main_Character : MonoBehaviour
             return;
         }
         // Access the horizontal component from the input manager
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        moveDirection = move.ReadValue<Vector2>();
+        if (jump.IsPressed() && isGrounded())
         {
             canJump = true;
             Jump();
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        if (dash.IsPressed() && canDash)
         {
             StartCoroutine(Dash());
         }
@@ -117,7 +140,7 @@ public class Main_Character : MonoBehaviour
             if (!isWallSliding && !isTouchingWall)
             // Get axis horizontal allow the user to move left and right by the keyboard (-1,1)
             {
-                body.velocity = new Vector2(horizontalInput * speed, body.velocity.y);
+                body.velocity = new Vector2(moveDirection.x * speed, body.velocity.y);
             }
             if (body.velocity.x != 0)
             {
@@ -136,12 +159,12 @@ public class Main_Character : MonoBehaviour
             return;
         }
         // Check the case of moving right without actually facing right and vice versa
-        if (horizontalInput > 0 && !isFacingright)
+        if (moveDirection.x > 0 && !isFacingright)
         {
             flip();
             isFlied = false;
         }
-        else if (horizontalInput < 0 && isFacingright)
+        else if (moveDirection.x < 0 && isFacingright)
         {
             flip();
             isFlied = true;
@@ -182,7 +205,7 @@ public class Main_Character : MonoBehaviour
     }
     private void WallJump()
     {
-        if ((isWallSliding && isTouchingWall) && Input.GetButtonDown("Jump"))
+        if (isWallSliding && isTouchingWall && jump.IsPressed())
         {
             body.AddForce(new Vector2(wallJumpingForce * wallJumpingDirection * wallJumpingAngle.x, wallJumpingForce * wallJumpingAngle.y), ForceMode2D.Impulse);
         }

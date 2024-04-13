@@ -14,8 +14,8 @@ public class health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-        Instantiate(Light, this.transform.position,Quaternion.identity);
-        Destroy(this.gameObject);
+            Instantiate(Light, this.transform.position,Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MC_AttackController : MonoBehaviour
 {
@@ -8,7 +9,30 @@ public class MC_AttackController : MonoBehaviour
     private Animator animator;
     [SerializeField] AudioSource Sword1;
     [SerializeField] AudioSource Sword2;
+    public PlayerInput playerControls;
+    private InputAction slash;
+    private InputAction fire;
 
+
+    void Awake()
+    {
+        playerControls = new PlayerInput();
+    }
+
+    void OnEnable()
+    {
+        slash = playerControls.Player.Slash;
+        fire = playerControls.Player.Fire;
+
+        slash.Enable();
+        fire.Enable();
+    }
+
+    void OnDisable()
+    {
+        slash.Disable();
+        fire.Disable();
+    }
 
     void Start()
     {
@@ -19,7 +43,7 @@ public class MC_AttackController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (slash.IsPressed())
         {
 
             float timeSinceLastAttack = Time.time - lastAttackTime;
@@ -49,7 +73,7 @@ public class MC_AttackController : MonoBehaviour
                 comboCount = 1;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (fire.IsPressed())
         {
 
             animator.SetTrigger("isShoot");
