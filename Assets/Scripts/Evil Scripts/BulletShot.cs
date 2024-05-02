@@ -10,25 +10,25 @@ public class BulletShot : MonoBehaviour
     Rigidbody2D bulletRB;
     public bool isFlipped = false;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        Physics2D.IgnoreLayerCollision(15, 11, true);
+        Physics2D.IgnoreLayerCollision(15, 6, true);
+        Physics2D.IgnoreLayerCollision(15, 16, true);
+        Physics2D.IgnoreLayerCollision(15, 17, true);
         bulletRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         LookAtPlayer();
         Vector2 moveDir = (target.transform.position - this.transform.position).normalized * speed_Bullet;
         bulletRB.velocity = new Vector2(moveDir.x, moveDir.y);
-        Physics2D.IgnoreLayerCollision(15, 11);
-        Physics2D.IgnoreLayerCollision(15, 6);
-        Physics2D.IgnoreLayerCollision(15, 16);
     }
-    void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(Fire_Spark, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
-
     }
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;

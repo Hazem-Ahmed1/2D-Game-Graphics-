@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 879070074457570692}
   - component: {fileID: 7893965858999106581}
   - component: {fileID: 8807057203915498755}
-  m_Layer: 6
+  m_Layer: 17
   m_Name: RockyGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}

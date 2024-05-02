@@ -5500,7 +5500,6 @@ MonoBehaviour:
   laugh: {fileID: 8300000, guid: e53b1581654abe9468d7cbfc81fba743, type: 3}
   death: {fileID: 8300000, guid: 776d097778566d347aeb4153203f3dd2, type: 3}
   hurt: {fileID: 8300000, guid: b4fb7c0908bb653449792cc9da7ffd36, type: 3}
-  fire: {fileID: 0}
   VictoryPanel: {fileID: 1250896215}
 --- !u!61 &1269505108
 BoxCollider2D:
@@ -12161,6 +12160,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathSound: {fileID: 991121327}
   hitSound: {fileID: 1570953021}
+  health: 0
 --- !u!4 &6572747780659754304
 Transform:
   m_ObjectHideFlags: 0
@@ -12218,7 +12218,7 @@ MonoBehaviour:
   animator: {fileID: 2077227335413746045}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 131136
   speed: 20
   jumpForce: 34
   canJump: 0

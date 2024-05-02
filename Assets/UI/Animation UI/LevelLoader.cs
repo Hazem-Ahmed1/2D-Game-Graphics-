@@ -9,11 +9,13 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1f;
     public void LoadNextLevel()
     {
+        Time.timeScale = 1f;
         this.gameObject.SetActive(true);
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
     public void MainMenuButton()
     {
+        Time.timeScale = 1f;
         this.gameObject.SetActive(true);
         StartCoroutine(LoadLevel(0));
     }
@@ -25,8 +27,8 @@ public class LevelLoader : MonoBehaviour
     }
     public void SelectLevel(int index)
     {
-        this.gameObject.SetActive(true);
         Time.timeScale = 1f;
+        this.gameObject.SetActive(true);
         StartCoroutine(LoadLevel(index));
     }
 

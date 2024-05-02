@@ -22,7 +22,7 @@ public class BossController : MonoBehaviour
     public int DamageBullet = 2;
     private bool heal = true;
     public AudioSource audioSource;
-    public AudioClip laugh,death,hurt,fire;
+    public AudioClip laugh,death,hurt;
     public GameObject VictoryPanel;
 
     // Start is called before the first frame update
@@ -33,8 +33,8 @@ public class BossController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         audioSource.clip = laugh;
         audioSource.Play();
+        Physics2D.IgnoreLayerCollision(11, 17,true);
     }
-
     private void FixedUpdate()
     {
         if (heal && HealthBarBoss.Health <= 100)
@@ -52,7 +52,6 @@ public class BossController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
             Clone = false;
         }
-
     }
     public void LookAtPlayer()
     {
@@ -98,7 +97,6 @@ public class BossController : MonoBehaviour
             StartCoroutine("Hurt");
             if (HealthBarBoss.Health <= 0)
             {
-                
                 boss_animator.ResetTrigger("Take Hit");
                 Die();
             }
