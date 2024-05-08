@@ -35,13 +35,13 @@ public class MC_AttackController : MonoBehaviour
             if (comboCount % 2 == 1)
             {
                 animator.SetTrigger("Attack1");
-                Sword1.Play();
+                // Sword1.Play();
 
             }
             else
             {
                 animator.SetTrigger("Attack2");
-                Sword2.Play();
+                // Sword2.Play();
             }
 
             if (comboCount > 2)
@@ -54,6 +54,14 @@ public class MC_AttackController : MonoBehaviour
 
             animator.SetTrigger("isShoot");
         }
+    }
+
+    public void meleeAttackSound1(){
+        Sword1.Play();
+    }
+
+    public void meleeAttackSound2(){
+        Sword2.Play();
     }
 
 }

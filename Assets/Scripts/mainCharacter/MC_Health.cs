@@ -17,6 +17,7 @@ public class MC_Health : MonoBehaviour
     [SerializeField] public AudioSource deathSound;
     [SerializeField] public AudioSource hitSound;
     [SerializeField] public float health;
+    [SerializeField] public bool meleeAttack = false;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,7 +58,7 @@ public class MC_Health : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("damage") && MC_health >= 0)
+        if (collision.CompareTag("damage") && MC_health >= 0 && !meleeAttack)
         {
             TakeDamage(15);
             if (MC_health <= 0)
@@ -69,7 +70,7 @@ public class MC_Health : MonoBehaviour
                 StartCoroutine(TriggerHurtAnimation());
             }
         }
-        else if (collision.CompareTag("Arrow") && MC_health >= 0)
+        else if (collision.CompareTag("Arrow") && MC_health >= 0 && !meleeAttack)
         {
             TakeDamage(10);
             if (MC_health <= 0)
@@ -106,5 +107,13 @@ public class MC_Health : MonoBehaviour
     public void MC_Destroy()
     {
         isStatic= false;
+    }
+
+    public void meleeAttackTrue(){
+        meleeAttack = true;
+    }
+
+    public void meleeAttackFalse(){
+        meleeAttack = false;
     }
 }
