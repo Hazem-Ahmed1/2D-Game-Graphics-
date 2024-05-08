@@ -3989,7 +3989,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4100,7 +4100,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3d26e489ee158684787c15f901f9fd33, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12161,6 +12161,7 @@ MonoBehaviour:
   deathSound: {fileID: 991121327}
   hitSound: {fileID: 1570953021}
   health: 0
+  meleeAttack: 0
 --- !u!4 &6572747780659754304
 Transform:
   m_ObjectHideFlags: 0

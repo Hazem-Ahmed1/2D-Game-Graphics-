@@ -519,6 +519,7 @@ MonoBehaviour:
   deathSound: {fileID: 0}
   hitSound: {fileID: 0}
   health: 10
+  meleeAttack: 0
 --- !u!114 &8175264651001409850
 MonoBehaviour:
   m_ObjectHideFlags: 0
